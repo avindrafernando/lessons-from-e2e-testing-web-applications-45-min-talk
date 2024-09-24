@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+	<html class="sl-root decks export offline loaded">
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover, minimal-ui">
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+		<link rel="manifest" href='data:application/manifest+json,{"display": "standalone", "name": "E2E Testing Web Applications - DjangoCon 2024"}' />
+		<title>E2E Testing Web Applications - DjangoCon 2024</title>
+
+
+		<link rel="stylesheet" type="text/css" href="lib/offline-v2.css">
+
+
+
+	</head>
+	<body class="reveal-viewport theme-font-montserrat theme-color-silver-blue">
+		<div class="reveal">
+			<div class="slides">
+				<section data-id="685e96859e51a6c0ce87a775f485cb91"><div class="sl-block" data-block-type="text" style="width: 1280px; left: 0px; top: 262.5px; height: auto;" data-block-id="29ef5c2c93c9c23ac458e4149ebd4b51"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 10;"><h1>Lessons from E2E Testing Web Applications</h1></div></div>
+<div class="sl-block" data-block-type="text" style="width: 375px; left: 895px; top: 661px; height: auto;" data-block-id="60a3bbda9a3a7dec03813553c1356be7" data-name="text-90c6c9"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Subtitle" style="z-index: 11;">
+<h3><span style="font-size:1.0em">@avindrafernando</span></h3>
+</div></div></section><section data-id="4cc441833613e041873e683b7fe4cf43"><div class="sl-block" data-block-type="image" data-name="image-64fdaf" style="width: 1080px; height: 720px; left: 100px; top: 0px; min-width: 1px; min-height: 1px;" data-block-id="0c509f6b92285fed5161f741b011e097"><div class="sl-block-content" style="z-index: 10;"><img class="" data-natural-width="1920" data-natural-height="1280" data-lazy-loaded="" data-src="lessons-from-e2e-testing-web-applications-django-con-2024/0f6033d076bb96596fbb51650f2ba033"></div></div></section><section data-id="21d340ce08bd1703015bd6f3bc1b33b9"><div class="sl-block" data-block-type="image" data-name="image-874c8f" data-block-id="ace047e3fa94d6e8518219e7b95b7a8f" style="width: 1080px; height: 720px; left: 100px; top: 0px; min-width: 1px; min-height: 1px;"><div class="sl-block-content" style="z-index: 10;"><img style="" data-natural-width="1920" data-natural-height="1280" data-lazy-loaded="" data-src="lessons-from-e2e-testing-web-applications-django-con-2024/442e40ea204497bd737e5e75b4645e77"></div></div></section><section data-id="2eaef8a4ca595c45dc37a4f13f10df02"><div class="sl-block" data-block-type="image" style="width: 247px; height: 480px; left: 516.5px; top: 120px; min-width: 1px; min-height: 1px;" data-block-id="8edc0552e127aa00443a23e3654e6698" data-name="image-b37da5"><div class="sl-block-content" style="z-index: 10;"><img data-natural-width="247" data-natural-height="480" style="" data-lazy-loaded="" data-src="lessons-from-e2e-testing-web-applications-django-con-2024/80dc92046bafe9ce9424e8d36c02b75c.gif"></div></div></section><section data-id="c8ea2e1a008b13faa6bac2573775d595">
+<div class="sl-block" data-block-type="image" style="width: 960px; height: 720px; left: 160px; top: 0px; min-width: 1px; min-height: 1px;" data-name="image-02210b" data-block-id="0879036af0b12d1b57a1e96a1d8e62f4"><div class="sl-block-content" style="z-index: 10;"><img style="" data-natural-width="1920" data-natural-height="1440" data-lazy-loaded="" data-src="lessons-from-e2e-testing-web-applications-django-con-2024/2b3c0aa119ab7cd3297739aa826912f0"></div></div></section><section data-id="4d40204b83a5739558fe44128f1c5598">
+
+
+
+
+
+<div class="sl-block" data-block-type="text" style="width: 806px; left: 238px; top: 102px; height: auto;" data-name="text-31bfca" data-block-id="a900fb95d73e5471f05de1defe077e58"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 10;">
+<h1>Who Am I?</h1>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 386px; left: 480px; top: 303.2px; height: auto;" data-name="text-2db81e" data-block-id="33628adb92d49264ebf850b82b26ca83"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Subtitle" style="z-index: 11;">
+<h3>@avindrafernando</h3>
+</div></div>
+<div class="sl-block" data-block-type="image" style="width: 70.25px; height: 70.25px; left: 384.75px; top: 293.575px; min-width: 1px; min-height: 1px;" data-name="image-b857db" data-block-id="288e50c5c64fb801e133fbcb4d153f32"><a class="sl-block-content" style="z-index: 12;" href="https://twitter.com/avindrafernando" target="_blank"><img style="left: -4px; top: 0px; width: 78px; height: 70px;" data-natural-width="266" data-natural-height="240" data-lazy-loaded="" data-crop-x="0.048872" data-crop-y="0" data-crop-width="0.902256" data-crop-height="1" data-src="lessons-from-e2e-testing-web-applications-django-con-2024/0209e6c7f5992fc3bfef0364a713bed3.png"></a></div>
+<div class="sl-block" data-block-type="image" style="width: 69px; height: 69px; left: 386px; top: 382.2px; min-width: 1px; min-height: 1px;" data-name="image-8c552c" data-block-id="aa3797952ac97f1b6cb729e304d09297"><a class="sl-block-content" style="z-index: 13;" href="https://medium.com/@avindra1" target="_blank"><img data-natural-width="195" data-natural-height="195" style="" data-lazy-loaded="" data-src="lessons-from-e2e-testing-web-applications-django-con-2024/cb272a02f021906dabf97685844104d7.png"></a></div>
+<div class="sl-block" data-block-type="text" style="width: 232px; left: 480px; top: 392.2px; height: auto;" data-name="text-8b85ee" data-block-id="1553f44dd7a70a3abf9d75c230f03548"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Subtitle" style="z-index: 14;">
+<h3>@avindra1</h3>
+</div></div>
+<div class="sl-block" data-block-type="image" style="width: 77px; height: 77px; left: 378px; top: 472.2px; min-width: 1px; min-height: 1px;" data-name="image-0015c8" data-block-id="0f2dffdb70958c4e2d6d834844bda2c1"><a class="sl-block-content" style="z-index: 15;" href="https://github.com/avindrafernando" target="_blank"><img style="" data-natural-width="1280" data-natural-height="1280" data-lazy-loaded="" data-src="lessons-from-e2e-testing-web-applications-django-con-2024/4a52bc7ba0cb349e47ec409288a8f80e.png"></a></div>
+<div class="sl-block" data-block-type="text" style="width: 370px; left: 480px; top: 485.2px; height: auto;" data-name="text-e8e623" data-block-id="fc9b936f61c76785e3fa798f16482412"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Subtitle" style="z-index: 16;">
+<h3>avindrafernando</h3>
+</div></div>
+<div class="sl-block" data-block-type="image" data-name="image-04c5b2" style="width: 77.8px; height: 77.8px; left: 381.6px; top: 570.2px; min-width: 1px; min-height: 1px;" data-block-id="c062c0d021d9bf85073957d97b1ad24a"><div class="sl-block-content" style="z-index: 17;"><img class="" data-natural-width="128" data-natural-height="128" data-lazy-loaded="" data-src="lessons-from-e2e-testing-web-applications-django-con-2024/dfd12dce80fee2f6a858079c0a59df8b.png"></div></div>
+<div class="sl-block" data-block-type="text" style="width: 524px; left: 480px; top: 578.2px; height: auto;" data-name="text-498ffa" data-block-id="33b5f49774857e0eefc8a064d7f6b8ea"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Subtitle" style="z-index: 18;"><h3>taprobaneconsulting.tech</h3></div></div></section><section data-id="78bb50bd73f65991e967decf4ecbefe0"><div class="sl-block" data-block-type="image" data-name="image-860cb9" style="width: 532.8px; height: 532.8px; left: 373.6px; top: 93.6px; min-width: 1px; min-height: 1px;" data-block-id="392f5158bbee0a4c931daaa31bf5250a"><div class="sl-block-content" style="z-index: 10;"><img style="" data-natural-width="640" data-natural-height="640" data-lazy-loaded="" data-src="lessons-from-e2e-testing-web-applications-django-con-2024/6231f7606fea18971ba15f8124e78e9c.gif"></div></div></section><section data-id="2d415933ec53113538b22e1fcdfccb25"><div class="sl-block" data-block-type="image" data-name="image-21d2b9" data-block-id="98223cb4be68fdee9e0ee6fcc97c43ed" style="width: 426.24px; height: 532.8px; left: 106.88px; top: 93.6px; min-width: 1px; min-height: 1px;"><div class="sl-block-content" style="z-index: 10;"><img style="" data-natural-width="1920" data-natural-height="2400" data-lazy-loaded="" data-src="lessons-from-e2e-testing-web-applications-django-con-2024/e2811debb596fe3bad2411c05623f21e"></div></div>
+<div class="sl-block" data-block-type="image" data-name="image-1c735b" data-block-id="d936340ba9df5ce3b1110bb3c64a76a3" style="width: 399.6px; height: 532.8px; left: 760.2px; top: 93.6px; min-width: 1px; min-height: 1px;"><div class="sl-block-content" style="z-index: 11;"><img style="" data-natural-width="1920" data-natural-height="2560" data-lazy-loaded="" data-src="lessons-from-e2e-testing-web-applications-django-con-2024/82da5da433956e5b1306b7f8a9099547"></div></div></section><section data-id="f29fbe22347fd41f35a0638e086566fd"><div class="sl-block" data-block-type="text" style="width: 1076px; left: 102px; top: 35px; height: auto;" data-block-id="2646748d8571a13aa94ab8e837a802f2"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 10;"><h2>E2E Testing can be challenging</h2></div></div>
+<div class="sl-block" data-block-type="image" style="width: 797.347px; height: 576px; left: 241.327px; top: 144px; min-width: 1px; min-height: 1px;" data-block-id="cba67c8d860f9b5bf20628289e2177b0" data-name="image-825f7a"><div class="sl-block-content" style="z-index: 11;"><img style="" data-natural-width="1920" data-natural-height="1387" data-lazy-loaded="" data-src="lessons-from-e2e-testing-web-applications-django-con-2024/8b040acca79d7a7356c1035f458c844b"></div></div></section><section data-id="f5f54853c05e3e7b4d48ece2892b72f3">
+<div class="sl-block" data-block-type="image" style="width: 478.67px; height: 720px; left: 399.978px; top: 0px; min-width: 1px; min-height: 1px;" data-block-id="b50404529eb49da61e7d4f1e55f0531e" data-name="image-bbdaf8"><div class="sl-block-content fragment semi-fade-out" style="z-index: 10;" data-fragment-index="0"><img data-natural-width="1920" data-natural-height="2888" style="" data-lazy-loaded="" data-src="lessons-from-e2e-testing-web-applications-django-con-2024/878a18af73695036b5dbc3b64432d1cb"></div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; width: 166px; left: 954px; top: 671px;" data-block-id="1aac3ef7857c2d9e3ab8067e49880efa" data-name="text-ace2ea"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11;" data-has-custom-html="">
+<p><span style="font-size:0.3em"><span style="color:rgb(17, 17, 17); text-align:start">Photo by </span><a href="https://unsplash.com/photos/Y58Sww9SR1c?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText" target="_blank">Philip Veater</a><span style="color:rgb(17, 17, 17); text-align:start"> on </span><a href="https://unsplash.com/search/photos/lego-help?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText" target="_blank">Unsplash</a></span></p>
+</div></div>
+<div class="sl-block" data-block-type="image" style="width: 200.043px; height: 67px; left: 539.978px; top: 43.5px; min-width: 1px; min-height: 1px;" data-block-id="33f1753d0e849d5457db93b4d2601b4b" data-name="image-d51acd"><div class="sl-block-content fragment" style="z-index: 12;" data-fragment-index="0"><img style="" data-natural-width="418" data-natural-height="140" data-lazy-loaded="" data-src="lessons-from-e2e-testing-web-applications-django-con-2024/e372f3235085416cd66a053b441068d3.png"></div></div>
+<div class="sl-block" data-block-type="image" data-name="image-f3137a" data-block-id="94af8c84cda2fcc547b9718eef5a1114" style="width: 281.866px; height: 56.847px; left: 498.38px; top: 115.576px; min-width: 1px; min-height: 1px;"><div class="sl-block-content fragment" style="z-index: 13;" data-fragment-index="0"><img class="" data-natural-width="952" data-natural-height="192" data-lazy-loaded="" data-src="lessons-from-e2e-testing-web-applications-django-con-2024/bf179856761454665024a4de01d59a00.svg"></div></div></section><section data-id="57ad10a1461e9911c0a542d068443982">
+<div class="sl-block" data-block-type="image" data-name="image-3a3c2e" data-block-id="837486b62c038a4a09b075a2410c4197" style="width: 584.359px; height: 465.144px; left: 0px; top: 80.6945px; min-width: 1px; min-height: 1px;"><div class="sl-block-content" style="z-index: 10;"><img class="" data-natural-width="1696" data-natural-height="1350" data-lazy-loaded="" data-src="lessons-from-e2e-testing-web-applications-django-con-2024/62ed059d8a0cf164d9a2c7be7bb119eb.png"></div></div>
+<div class="sl-block" data-block-type="image" data-name="image-15d4c0" data-block-id="bf2b8aa8b9b85d9ee94a977a5df93496" style="width: 696.989px; height: 465.144px; left: 584.359px; top: 80.6945px; min-width: 1px; min-height: 1px;"><div class="sl-block-content" style="z-index: 11;"><img class="" data-natural-width="1918" data-natural-height="1280" data-lazy-loaded="" data-src="lessons-from-e2e-testing-web-applications-django-con-2024/11691a778e13617da81da218aeb347ad.png"></div></div></section><section data-id="9ce836a50058a7ea46067bf92fbabc43"><div class="sl-block" data-block-type="video" data-name="video-4a7ff5" data-block-id="4be888c70c9103bd718cd0a8e7c7d26b" style="min-width: 30px; min-height: 30px; width: 1280px; height: 682px; left: 0px; top: 19px;"><div class="sl-block-content" style="z-index: 10;" data-media-id="10697918" data-video-thumb="lessons-from-e2e-testing-web-applications-django-con-2024/815dc8372f365b160b16a9ce86644d44.jpg"><video playsinline="" controls="controls" poster="lessons-from-e2e-testing-web-applications-django-con-2024/815dc8372f365b160b16a9ce86644d44.jpg" data-lazy-loaded="" data-autoplay="" muted="" loop="loop" data-paused-by-reveal="" data-src="lessons-from-e2e-testing-web-applications-django-con-2024/d14c845bdd6381260ee6af2ac8c17363.mp4"></video></div></div></section><section data-id="f3daa74f134b71bf8edf1210719a143c"><div class="sl-block" data-block-type="image" data-name="image-bf17c2" data-block-id="b72d86e0a32866d88326bcd78713a4a3" style="width: 1227.29px; height: 720.053px; left: 26.355px; top: -2.84217e-14px;"><div class="sl-block-content" style="z-index: 10;"><img class="" data-natural-width="2301" data-natural-height="1350" data-src="lessons-from-e2e-testing-web-applications-django-con-2024/15e2d9ff33d6ed8a060c64b8d5b3a0f3.png"></div></div></section><section data-id="d0892920cef9c2f5715fd90d39505382">
+<div class="sl-block" data-block-type="image" data-name="image-d6ab4e" data-block-id="3e2f045504f166e3c3eac6a2782ced06" style="width: 480.096px; height: 720.144px; left: 800px; top: 0px; min-width: 1px; min-height: 1px;"><div class="sl-block-content" style="z-index: 10;"><img style="" data-natural-width="1920" data-natural-height="2880" data-lazy-loaded="" data-src="lessons-from-e2e-testing-web-applications-django-con-2024/0ff73850db224b4301e63f32fb753b9b"></div></div>
+<div class="sl-block" data-block-type="text" style="width: 720px; left: 24px; top: 165.072px; height: auto;" data-block-id="2619ce6de3a99834b48494c7cb5c61e5" data-name="text-8d43d3"><div class="sl-block-content" data-placeholder-tag="h1" style="font-size: 200%; text-align: left; z-index: 11;" data-placeholder-text="Text"><h1>Common Pitfalls</h1></div></div></section><section data-id="00e5126e007628d6591936d4643dfb9a">
+<div class="sl-block" data-block-type="image" data-name="image-d6ab4e" style="width: 480.096px; height: 720px; left: -0.096px; top: 0px; min-width: 1px; min-height: 1px;" data-block-id="9eefd88527fc848c3ceb4bafb94ba004"><div class="sl-block-content" style="z-index: 10;"><img style="" data-natural-width="1667" data-natural-height="2500" data-lazy-loaded="" data-src="lessons-from-e2e-testing-web-applications-django-con-2024/80b2ce2c68c0988a104602724674a9a1"></div></div>
+<div class="sl-block" data-block-type="text" style="width: 652px; left: 560px; top: 165px; height: auto;" data-name="text-8d43d3" data-block-id="f55f76c1cf631a35d85d5765c3f61b5c"><div class="sl-block-content" data-placeholder-tag="h1" style="font-size: 200%; text-align: left; z-index: 11;" data-placeholder-text="Text"><h1>Lessons Learned</h1></div></div></section><section data-id="5d458ff051c6db41ac85e1ebc1dd1e6a"><div class="sl-block" data-block-type="text" style="width: 1076px; left: 102px; top: 432px; height: auto;" data-block-id="5d5711bde416676eae48065ba591d155"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 10;"><h1> 💡 Time based Waits</h1></div></div>
+<div class="sl-block" data-block-type="image" data-name="image-17f08a" style="width: 413.7px; height: 275.8px; left: 433.15px; top: 78.1px; min-width: 1px; min-height: 1px;" data-block-id="1b9bf36e766a501c203e66144ebadd77"><div class="sl-block-content" style="z-index: 11;"><img class="" data-natural-width="1920" data-natural-height="1280" data-lazy-loaded="" data-src="lessons-from-e2e-testing-web-applications-django-con-2024/f64745ae6d0dd80d89d248f17bfde2b7"></div></div></section><section data-id="550adb83c0fc3d3d19e23b89cf60ea38"><div class="sl-block" data-block-type="text" style="width: 1076px; left: 102px; top: 70px; height: auto;" data-block-id="67f6e17244daf0cd3762c40192de0f95" data-name="text-bdcd5d"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10;"><h2>😟 Overly relying on time based waits</h2></div></div>
+<div class="sl-block" data-block-type="code" data-name="code-595252" style="width: 1280px; height: 556px; left: 0px; top: 164px;" data-block-id="0d05f686fa1e64e72cdc9b8a1a7bdb12"><div class="sl-block-content notranslate" data-highlight-theme="xcode" data-code-frame="none" style="z-index: 11;"><pre style="font-size: 35px; line-height: 42px; tab-size: 4;" class="typescript"><code data-line-numbers="|3,9,11">it('should display a list of todos', () =&gt; {
+  cy.visit('/')
+  cy.wait(1000)
+  cy.get('#my-todos').should('be.visible')
+})
+
+it('should load records', () =&gt; {
+  cy.visit('/')
+  cy.wait(5000)
+  cy.get('#load-records').click()
+  cy.wait(7500)
+  cy.get('#my-records').should('be.visible')
+})</code></pre></div></div>
+<div class="sl-block" data-block-type="image" data-name="image-03857e" data-block-id="b22b87d38de0e60a8bf9b0f63dda3ce5" style="width: 71.4px; height: 71.4px; left: 1208.6px; top: 0.6px; min-width: 1px; min-height: 1px;"><div class="sl-block-content" style="z-index: 12;"><img class="" data-natural-width="150" data-natural-height="150" data-lazy-loaded="" data-src="lessons-from-e2e-testing-web-applications-django-con-2024/1792cb56dd025ab36d3147ce25d61d88.svg"></div></div></section><section data-id="33cedbeed6f156bf0b23bdb70bb6c463"><div class="sl-block" data-block-type="image" data-name="image-e69fe1" data-block-id="fa6892d911998d02bdc1822c15ded146" style="width: 509.49px; height: 532.8px; left: 385.255px; top: 93.6px; min-width: 1px; min-height: 1px;"><div class="sl-block-content" style="z-index: 10;"><img class="" data-natural-width="459" data-natural-height="480" data-lazy-loaded="" data-src="lessons-from-e2e-testing-web-applications-django-con-2024/ea37dc43bea404895982ee7cde1bdaa8.png"></div></div></section><section data-id="5db50d78b4b6696f30f31812658f1fed"><div class="sl-block" data-block-type="image" data-name="image-953625" data-block-id="633e442a23e1eeddae9b603d9ea24ecc" style="width: 947.2px; height: 532.8px; left: 166.4px; top: 93.6px; min-width: 1px; min-height: 1px;"><div class="sl-block-content" style="z-index: 10;"><img class="" data-natural-width="480" data-natural-height="270" data-lazy-loaded="" data-src="lessons-from-e2e-testing-web-applications-django-con-2024/f480cbda11e0f49b1a96ea5b08745192.gif"></div></div></section><section data-id="26cd8e006c2057db1469d3e1f50fa610"><div class="sl-block" data-block-type="text" style="width: 1076px; left: 102px; top: 70px; height: auto;" data-name="text-bdcd5d" data-block-id="ddfeb77d67a4803a616bd5e7ea4904b4"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10;"><h2>✅ Spy using cy.intercept</h2></div></div>
+<div class="sl-block" data-block-type="code" data-name="code-595252" style="width: 1280px; height: 303px; left: 0px; top: 241px;" data-block-id="e8195bfb70633cffb7dec1cdce666f70"><div class="sl-block-content notranslate" data-highlight-theme="xcode" data-code-frame="none" style="z-index: 11;"><pre style="font-size: 40px; line-height: 48px; tab-size: 4;" class="typescript"><code data-line-numbers="|2|4">it('should display a list of todos', () =&gt; {
+  cy.intercept('GET', '/todos').as('todos')
+  cy.visit('/')
+  cy.wait('@todos')
+  cy.get('#my-todos').should('be.visible')
+})</code></pre></div></div>
+<div class="sl-block" data-block-type="image" data-name="image-03857e" style="width: 71.4px; height: 71.4px; left: 1208.6px; top: 0.6px; min-width: 1px; min-height: 1px;" data-block-id="be60052b54cc3bfca2a8409357afdd28"><div class="sl-block-content" style="z-index: 12;"><img class="" data-natural-width="150" data-natural-height="150" data-lazy-loaded="" data-src="lessons-from-e2e-testing-web-applications-django-con-2024/1792cb56dd025ab36d3147ce25d61d88.svg"></div></div></section><section data-id="ea2e2db28267304d8091882af50b4d63"><div class="sl-block" data-block-type="text" style="width: 1076px; left: 102px; top: 70px; height: auto;" data-name="text-bdcd5d" data-block-id="7bea37a6d228e5948d4096b90c4602ce"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10;"><h2>✅ Spread to handle multiple requests</h2></div></div>
+<div class="sl-block" data-block-type="code" data-name="code-595252" style="width: 1280px; height: 350px; left: 0px; top: 275.5px;" data-block-id="b6e8b622c8b1e78c965c343674c11b49"><div class="sl-block-content notranslate" data-highlight-theme="xcode" data-code-frame="none" style="z-index: 11;"><pre style="font-size: 35px; line-height: 42px; tab-size: 4;" class="typescript"><code data-line-numbers="">cy.intercept('GET', '/todos').as('todos')
+cy.intercept('GET', '/users').as('users')
+cy.intercept('GET', '/comments').as('comments')
+cy.wait(['@todos', '@users', '@comments']).spread(
+  (todos, users, comments) =&gt; {
+    // each interception is now an individual argument
+  }
+)</code></pre></div></div>
+<div class="sl-block" data-block-type="image" data-name="image-03857e" style="width: 71.4px; height: 71.4px; left: 1208.6px; top: 0.6px; min-width: 1px; min-height: 1px;" data-block-id="c675004bd92ef0b50893119245a5f37c"><div class="sl-block-content" style="z-index: 12;"><img class="" data-natural-width="150" data-natural-height="150" data-lazy-loaded="" data-src="lessons-from-e2e-testing-web-applications-django-con-2024/1792cb56dd025ab36d3147ce25d61d88.svg"></div></div></section><section data-id="daba52d665c77a7181cf802fa5958cdd"><div class="sl-block" data-block-type="text" style="width: 1076px; left: 102px; top: 70px; height: auto;" data-name="text-bdcd5d" data-block-id="f671dd048d61f64db2af106e55a0d572"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10;"><h2>✅ No wait, only waitFor*</h2></div></div>
+<div class="sl-block" data-block-type="text" style="width: 1075px; left: 102px; top: 213.5px; height: auto;" data-block-id="08eb538ab3ca51f35ace31cf3fbc8037" data-name="text-1fd78a"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11; line-height: 1.95;" data-has-line-height=""><ul>
+	<li>waitForURL</li>
+	<li>waitForRequest</li>
+	<li>waitForResponse</li>
+	<li>waitForLoadState</li>
+	<li>and more...</li>
+</ul></div></div>
+<div class="sl-block" data-block-type="image" data-name="image-ac296d" data-block-id="fce4182e1f84a6db38a79e72b68c5b7e" style="width: 93.3333px; height: 70px; left: 1186.67px; top: 0px; min-width: 1px; min-height: 1px;"><div class="sl-block-content" style="z-index: 12;"><img class="" data-natural-width="256" data-natural-height="192" data-lazy-loaded="" data-src="lessons-from-e2e-testing-web-applications-django-con-2024/6e1a48c55b3a5f78f625baadac354c81.svg"></div></div></section><section data-id="4254725b248ea6a68b6da05258277e85"><div class="sl-block" data-block-type="text" style="width: 1076px; left: 102px; top: 70px; height: auto;" data-name="text-bdcd5d" data-block-id="a759661550706228ef1536e163f5a096"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10;"><h2>✅ waitForURL to Navigate away</h2></div></div>
+<div class="sl-block" data-block-type="code" data-name="code-595252" style="width: 1280px; height: 255px; left: -1px; top: 261.5px;" data-block-id="5f5176fccdcb3e415f90c95cdaf5662b"><div class="sl-block-content notranslate" data-highlight-theme="xcode" data-code-frame="none" style="z-index: 11;"><pre style="font-size: 40px; line-height: 48px; tab-size: 4;" class="typescript"><code data-line-numbers="">// Clicks a link
+await page.click('a.some-link')
+
+// Waits for the next page to load
+await page.waitForURL('**/target.html')</code></pre></div></div>
+<div class="sl-block" data-block-type="image" data-name="image-ac296d" style="width: 93.3333px; height: 70px; left: 1186.67px; top: 0px; min-width: 1px; min-height: 1px;" data-block-id="e06da289921fc6a085282af845003080"><div class="sl-block-content" style="z-index: 12;"><img class="" data-natural-width="256" data-natural-height="192" data-lazy-loaded="" data-src="lessons-from-e2e-testing-web-applications-django-con-2024/6e1a48c55b3a5f78f625baadac354c81.svg"></div></div></section><section data-id="39c184cd3f5895f7d3f06c1a55b010b0"><div class="sl-block" data-block-type="text" style="width: 1280px; left: 0px; top: 70px; height: auto;" data-name="text-bdcd5d" data-block-id="1df138315ada3913a6adf176f2d20e8f"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10;"><h2>✅ Wait for a network request/response</h2></div></div>
+<div class="sl-block" data-block-type="code" data-name="code-595252" style="width: 1280px; height: 230px; left: 0.0033px; top: 317px;" data-block-id="b93713df717cdc62dd35b597f3cd1b53"><div class="sl-block-content notranslate" data-highlight-theme="xcode" data-code-frame="none" style="z-index: 11;"><pre style="font-size: 35px; line-height: 42px; tab-size: 4;" class="typescript"><code data-line-numbers="">// Example: Waiting for a specific API response
+await page.waitForResponse('https://example.com/api/data')
+
+// Example: Waiting for any request to a certain endpoint
+await page.waitForRequest('https://example.com/api/*')</code></pre></div></div>
+<div class="sl-block" data-block-type="image" data-name="image-ac296d" style="width: 93.3333px; height: 70px; left: 1186.67px; top: 0px; min-width: 1px; min-height: 1px;" data-block-id="ef0c836fbb9c04acae238e396d32de3c"><div class="sl-block-content" style="z-index: 12;"><img class="" data-natural-width="256" data-natural-height="192" data-lazy-loaded="" data-src="lessons-from-e2e-testing-web-applications-django-con-2024/6e1a48c55b3a5f78f625baadac354c81.svg"></div></div></section><section data-id="f72e58bc85d8a40b4e814961f3d6458f"><div class="sl-block" data-block-type="text" style="width: 1076px; left: 102px; top: 432px; height: auto;" data-block-id="a8c555e7885a809efc41190828af0c91"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 10;"><h1> 💡 Async nature</h1></div></div>
+<div class="sl-block" data-block-type="image" data-name="image-17f08a" data-block-id="2868aeb0117cec17dcf328284fd3023d" style="width: 413.7px; height: 275.8px; left: 433.15px; top: 78.1px; min-width: 1px; min-height: 1px;"><div class="sl-block-content" style="z-index: 11;"><img class="" data-natural-width="1920" data-natural-height="1280" data-lazy-loaded="" data-src="lessons-from-e2e-testing-web-applications-django-con-2024/f64745ae6d0dd80d89d248f17bfde2b7"></div></div></section><section data-id="d8d0928e90199489f3cc1819d1a58bb0"><div class="sl-block" data-block-type="code" data-name="code-595252" style="width: 1280px; height: 158px; left: 0px; top: 246px;" data-block-id="04b9433e7af586a4e959e3b42e17a8a7"><div class="sl-block-content notranslate" data-highlight-theme="xcode" data-code-frame="none" style="z-index: 10;"><pre style="font-size: 40px; line-height: 48px; tab-size: 4;" class="typescript"><code data-line-numbers="">const title = cy.title()
+expect(title).to.eq('My Title')</code></pre></div></div>
+<div class="sl-block" data-block-type="text" style="width: 1076px; left: 80px; top: 70px; height: auto;" data-block-id="2066b6415dbbefc0a8682bc1506eb0d1" data-name="text-c54df3"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 11;"><h2>⚠️ Return values</h2></div></div>
+<div class="sl-block" data-block-type="code" style="width: 1280px; height: 167px; left: 0px; top: 432px;" data-block-id="ca3d19e9575c28580224e8fcde90780a" data-name="code-79efd6"><div class="sl-block-content notranslate" data-highlight-theme="xcode" data-code-frame="none" style="z-index: 12;"><pre style="font-size: 40px; line-height: 48px; tab-size: 4;" class="typescript"><code data-line-numbers="">const myLinks = cy.get('a')
+
+myLinks.first().click()</code></pre></div></div>
+<div class="sl-block" data-block-type="image" data-name="image-03857e" style="width: 71.4px; height: 71.4px; left: 1208.6px; top: 0.6px; min-width: 1px; min-height: 1px;" data-block-id="bba528aa46e969f295363840f13955f8"><div class="sl-block-content" style="z-index: 13;"><img class="" data-natural-width="150" data-natural-height="150" data-lazy-loaded="" data-src="lessons-from-e2e-testing-web-applications-django-con-2024/1792cb56dd025ab36d3147ce25d61d88.svg"></div></div></section><section data-id="89c3958c1550789e3fe611190bb4f289"><div class="sl-block" data-block-type="text" style="width: 1152px; left: 30px; top: 58px; height: auto;" data-block-id="1f6318ff195078f4c035362535afd574"><div class="sl-block-content" data-placeholder-tag="h1" style="font-size: 200%; text-align: left; z-index: 10;" data-placeholder-text="Text"><h1>Will<br>
+not<br>
+work!!!</h1></div></div>
+<div class="sl-block" data-block-type="image" data-name="image-96acd5" data-block-id="bc64fedb597d27e6b26a855174fe0ae3" style="width: 576px; height: 720px; left: 704px; top: 0px; min-width: 1px; min-height: 1px;"><div class="sl-block-content" style="z-index: 11;"><img class="" data-natural-width="1920" data-natural-height="2400" data-lazy-loaded="" data-src="lessons-from-e2e-testing-web-applications-django-con-2024/09e2efa6c67f9b1acab0f1f018fa821f"></div></div></section><section data-id="6b2dd06a911a5f8b8201d27402d15493"><div class="sl-block" data-block-type="text" style="width: 1075px; left: 102.5px; top: 46px; height: auto;" data-block-id="74abb040f4117e6737618e0ff25d07c2"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 10;"><h1>What about async/awaits?</h1></div></div>
+<div class="sl-block" data-block-type="image" data-name="image-105a4e" data-block-id="fdb2c4ef7abae4fb0f3bb0aa5047fa0b" style="width: 508.471px; height: 487.324px; left: 385.764px; top: 188.338px; min-width: 1px; min-height: 1px;"><div class="sl-block-content" style="z-index: 11;"><img class="" data-natural-width="1920" data-natural-height="2560" data-crop-x="0" data-crop-y="0.140596" data-crop-width="1" data-crop-height="0.718808" style="left: 0px; top: -95px; width: 508px; height: 678px;" data-lazy-loaded="" data-src="lessons-from-e2e-testing-web-applications-django-con-2024/aeb5152e307b4d8f2afdfdefc9e95d40"></div></div></section><section data-id="a6b9a05af8e1214f946b6a174c35051e"><div class="sl-block" data-block-type="text" style="width: 1152px; left: 30px; top: 58px; height: auto;" data-block-id="e774c61bcd5b5b38b86463eb04192f62"><div class="sl-block-content" data-placeholder-tag="h1" style="font-size: 200%; text-align: left; z-index: 10;" data-placeholder-text="Text"><h1>Will also<br>
+not<br>
+work!!!</h1></div></div>
+<div class="sl-block" data-block-type="image" data-name="image-96acd5" style="width: 576px; height: 720px; left: 704px; top: 0px; min-width: 1px; min-height: 1px;" data-block-id="3c68b79ab0fcb29566b2d93760cf10f3"><div class="sl-block-content" style="z-index: 11;"><img class="" data-natural-width="480" data-natural-height="400" data-lazy-loaded="" data-crop-x="0.166667" data-crop-y="0" data-crop-width="0.666667" data-crop-height="1" style="left: -144px; top: 0px; width: 864px; height: 720px;" data-src="lessons-from-e2e-testing-web-applications-django-con-2024/011cba73cb91920dc3bd852bcc2f87a4.gif"></div></div></section><section data-id="dc85c91f74c5f5e303ef9ed59512de9d"><div class="sl-block" data-block-type="code" data-name="code-595252" style="width: 1280px; height: 645.4px; left: -1px; top: 74.6px;" data-block-id="4a8aebef9dca3b52dd9d611dcff18718"><div class="sl-block-content notranslate" data-highlight-theme="xcode" data-code-frame="none" style="z-index: 10;"><pre style="font-size: 35px; line-height: 42px;" class="typescript"><code data-line-numbers="">it('should display a list of todos', () =&gt; {
+  let firstTodo = undefined 
+
+  cy.visit('/todos')
+  cy.get('li.todo')
+    .then(($el) =&gt; {
+      firstTodo = $el.text()
+    })
+
+  if (firstTodo) {
+    cy.contains(firstTodo)
+  } else {
+    cy.contains('No todo found')
+  }
+})</code></pre></div></div>
+<div class="sl-block" data-block-type="text" style="width: 1076px; left: 80px; top: 0.6px; height: auto;" data-name="text-c54df3" data-block-id="60181b679fc169d16665708313114dbf"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 11;"><h2>⚠️ This will not work</h2></div></div>
+<div class="sl-block" data-block-type="image" data-name="image-03857e" style="width: 71.4px; height: 71.4px; left: 1208.6px; top: 0.6px; min-width: 1px; min-height: 1px;" data-block-id="286e8d6f39aa2735ae5632b10cb620b5"><div class="sl-block-content" style="z-index: 12;"><img class="" data-natural-width="150" data-natural-height="150" data-lazy-loaded="" data-src="lessons-from-e2e-testing-web-applications-django-con-2024/1792cb56dd025ab36d3147ce25d61d88.svg"></div></div></section><section data-id="41d9e9ef7eeb6b35b1eaa33eb89aebc6"><div class="sl-block" data-block-type="code" data-name="code-595252" style="width: 1280px; height: 645.4px; left: -1px; top: 74.6px;" data-block-id="e1a13d4044fb6b7a07a67b740d68c574"><div class="sl-block-content notranslate" data-highlight-theme="xcode" data-code-frame="none" style="z-index: 10;"><pre style="font-size: 35px; line-height: 42px;" class="typescript"><code data-line-numbers="">it('should display a list of todos', () =&gt; {
+  let firstTodo = undefined 
+
+  cy.visit('/todos')
+  cy.get('li.todo')
+    .then(($el) =&gt; {
+      firstTodo = $el.text()
+    
+      if (firstTodo) {
+        cy.contains(firstTodo)
+      } else {
+        cy.contains('No todo found')
+      }
+    })
+})</code></pre></div></div>
+<div class="sl-block" data-block-type="text" style="width: 1076px; left: 80px; top: 0.6px; height: auto;" data-name="text-c54df3" data-block-id="96ac32e2edbde2757afd1d069bf75503"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 11;"><h2>✅ This will work</h2></div></div>
+<div class="sl-block" data-block-type="image" data-name="image-03857e" style="width: 71.4px; height: 71.4px; left: 1208.6px; top: 0.6px; min-width: 1px; min-height: 1px;" data-block-id="622f0073a95f23b27af6c06f4f8639ac"><div class="sl-block-content" style="z-index: 12;"><img class="" data-natural-width="150" data-natural-height="150" data-lazy-loaded="" data-src="lessons-from-e2e-testing-web-applications-django-con-2024/1792cb56dd025ab36d3147ce25d61d88.svg"></div></div></section><section data-id="a9be74ba9f0d87afbfb75de411f88b40"><div class="sl-block" data-block-type="code" data-name="code-595252" style="width: 1280px; height: 359px; left: 0px; top: 252.5px;" data-block-id="cdd84c7cc67f3af0d730fd4756d90dc7"><div class="sl-block-content notranslate" data-highlight-theme="xcode" data-code-frame="none" style="z-index: 10;"><pre style="font-size: 35px; line-height: 42px;" class="typescript"><code data-line-numbers="">cy.get('.my-selector')
+  .as('myElement') // sets the alias
+  .click()
+
+/* many more actions */
+
+cy.get('@myElement') // re-queries the DOM as before
+  .click()</code></pre></div></div>
+<div class="sl-block" data-block-type="text" style="width: 1076px; left: 80px; top: 70px; height: auto;" data-name="text-c54df3" data-block-id="0da239a12c07ba4a524e5c8785cf0545"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 11;"><h2>✅ Use aliases</h2></div></div>
+<div class="sl-block" data-block-type="image" data-name="image-03857e" style="width: 71.4px; height: 71.4px; left: 1208.6px; top: 0.6px; min-width: 1px; min-height: 1px;" data-block-id="8288dca59f14fb6e3f9f2fe146790370"><div class="sl-block-content" style="z-index: 12;"><img class="" data-natural-width="150" data-natural-height="150" data-lazy-loaded="" data-src="lessons-from-e2e-testing-web-applications-django-con-2024/1792cb56dd025ab36d3147ce25d61d88.svg"></div></div></section><section data-id="92e9a4a6b991af2a4b144f13f2380da9"><div class="sl-block" data-block-type="text" style="width: 1075px; left: 102.5px; top: 46px; height: auto;" data-block-id="f3ebd164969bfabb2e47afb10ffa4dd6"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 10;"><h1>What about async/awaits?</h1></div></div>
+<div class="sl-block" data-block-type="image" data-name="image-105a4e" style="width: 508.471px; height: 487.324px; left: 385.764px; top: 188.338px; min-width: 1px; min-height: 1px;" data-block-id="5854b1c9d094894f78bd0c11b1df3f74"><div class="sl-block-content" style="z-index: 11;"><img class="" data-natural-width="1920" data-natural-height="2560" data-crop-x="0" data-crop-y="0.140596" data-crop-width="1" data-crop-height="0.718808" style="left: 0px; top: -95px; width: 508px; height: 678px;" data-lazy-loaded="" data-src="lessons-from-e2e-testing-web-applications-django-con-2024/aeb5152e307b4d8f2afdfdefc9e95d40"></div></div></section><section data-id="3d4d67965b79f54ee9d593255906d5ed"><div class="sl-block" data-block-type="text" style="width: 704px; left: 0px; top: 165px; height: auto;" data-block-id="27c91fc91e026ae989581246cff99ca1"><div class="sl-block-content" data-placeholder-tag="h1" style="font-size: 200%; text-align: left; z-index: 10;" data-placeholder-text="Text"><h1>It will<br>
+work!!!</h1></div></div>
+<div class="sl-block" data-block-type="image" data-name="image-96acd5" style="width: 576px; height: 720px; left: 704px; top: 0px; min-width: 1px; min-height: 1px;" data-block-id="248154a6ff58a44b38a5334944ad9ca4"><div class="sl-block-content" style="z-index: 11;"><img class="" data-natural-width="600" data-natural-height="600" data-lazy-loaded="" data-crop-x="0.1" data-crop-y="0" data-crop-width="0.8" data-crop-height="1" style="left: -72px; top: 0px; width: 720px; height: 720px;" data-src="lessons-from-e2e-testing-web-applications-django-con-2024/b0281cb6063eb08c8e8fc9e1f840cb85.gif"></div></div></section><section data-id="c193895e818ccb71ac42bf3ace56d669"><div class="sl-block" data-block-type="code" data-name="code-595252" style="width: 1280px; height: 513px; left: -1px; top: 207px;" data-block-id="b661e9addd7be4add4c2285338252128"><div class="sl-block-content notranslate" data-highlight-theme="xcode" data-code-frame="none" style="z-index: 10;"><pre style="font-size: 26px; line-height: 31px; tab-size: 4;" class="typescript"><code data-line-numbers="">test('should display a title', async ({ page }) =&gt; {
+  await page.goto('/todos')
+
+  // Expect a title "to contain" a substring.
+  await expect(page).toHaveTitle(/Todos/)
+});
+
+test('should display the log in button after logging out', async ({ page }) =&gt; {
+  await page.goto('/todos')
+
+  // Click the log out button.
+  await page.getByRole('button', { name: 'Log out' }).click()
+
+  // Expects page to have a button which reads Log in.
+  await expect(page.getByRole('button', { name: 'Log in' })).toBeVisible()
+});</code></pre></div></div>
+<div class="sl-block" data-block-type="text" style="width: 1076px; left: 101px; top: 35px; height: auto;" data-name="text-c54df3" data-block-id="1ec578f4e94ade0c9facc2d7ee60b8c9"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 11;"><h2>✅ Built in asyc/awaits in Playwright</h2></div></div>
+<div class="sl-block" data-block-type="image" data-name="image-ac296d" style="width: 93.3333px; height: 70px; left: 1186.67px; top: 0px; min-width: 1px; min-height: 1px;" data-block-id="5fd3e58a20ac3e3cbbf38537854d3630"><div class="sl-block-content" style="z-index: 12;"><img class="" data-natural-width="256" data-natural-height="192" data-lazy-loaded="" data-src="lessons-from-e2e-testing-web-applications-django-con-2024/6e1a48c55b3a5f78f625baadac354c81.svg"></div></div></section><section data-id="90cb103e05733af409f1fc4be3724208"><div class="sl-block" data-block-type="text" style="width: 1076px; left: 102px; top: 432px; height: auto;" data-block-id="d5aca8afe874bed8f4569d415d32b73a"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 10;"><h1> 💡 Custom commands</h1></div></div>
+<div class="sl-block" data-block-type="image" data-name="image-17f08a" style="width: 413.7px; height: 275.8px; left: 433.15px; top: 78.1px; min-width: 1px; min-height: 1px;" data-block-id="7ead274643df62d70df176c8e3273253"><div class="sl-block-content" style="z-index: 11;"><img class="" data-natural-width="1920" data-natural-height="1280" data-lazy-loaded="" data-src="lessons-from-e2e-testing-web-applications-django-con-2024/f64745ae6d0dd80d89d248f17bfde2b7"></div></div></section><section data-id="721aaa0d399542858950b5373f26658c"><div class="sl-block" data-block-type="code" data-name="code-595252" style="width: 1280px; height: 446px; left: 0px; top: 209px;" data-block-id="dded6e0d59f46c4083d6684a5c69fad0"><div class="sl-block-content notranslate" data-highlight-theme="xcode" data-code-frame="none" style="z-index: 10;"><pre style="font-size: 40px; line-height: 48px; tab-size: 4;" class="typescript"><code data-line-numbers="">cy.visit('/login')
+
+cy.get('input[name=email]').type(user.email)
+cy.get('input[name=password]').type(user.password)
+
+cy.click('#login')
+
+cy.get('h1').contains(`Welcome back ${user.name}!`)</code></pre></div></div>
+<div class="sl-block" data-block-type="text" style="width: 1076px; left: 80px; top: 70px; height: auto;" data-name="text-c54df3" data-block-id="ab4bf8c79fb4caa1271bc9f74772c2cf"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 11;"><h2>⚠️ Login logic</h2></div></div>
+<div class="sl-block" data-block-type="image" data-name="image-03857e" style="width: 71.4px; height: 71.4px; left: 1208.6px; top: 0.6px; min-width: 1px; min-height: 1px;" data-block-id="5aa3342c14f43aeadea795c8fa8cac6b"><div class="sl-block-content" style="z-index: 12;"><img class="" data-natural-width="150" data-natural-height="150" data-lazy-loaded="" data-src="lessons-from-e2e-testing-web-applications-django-con-2024/1792cb56dd025ab36d3147ce25d61d88.svg"></div></div></section><section data-id="4f97afe225ea86a435370c660a4a0c59"><div class="sl-block" data-block-type="code" data-name="code-595252" style="width: 1280px; height: 372.5px; left: 0px; top: 214.25px;" data-block-id="ed044e35e6202eeefcc3f0c2b3241130"><div class="sl-block-content notranslate" data-highlight-theme="xcode" data-code-frame="none" style="z-index: 10;"><pre style="font-size: 33px; line-height: 40px; tab-size: 4;" class="typescript"><code data-line-numbers="">Cypress.Commands.add('loginByApi', 
+                     (role: Role = Role.SystemAdmin) =&gt; {
+  const loginEmail: string = 
+        Cypress.env('credentials')?.[role]?.['loginEmail']
+  const loginPassword: string = 
+        Cypress.env('credentials')?.[role]?.['loginPassword']
+
+  // Login by an API logic goes here
+})</code></pre></div></div>
+<div class="sl-block" data-block-type="text" style="width: 1076px; left: 80px; top: 70px; height: auto;" data-name="text-c54df3" data-block-id="c4225cf098f8c2cb69a403fd269ec9d4"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 11;"><h2>✅ Custom login command</h2></div></div>
+<div class="sl-block" data-block-type="code" style="width: 1280px; height: 102.5px; left: 0px; top: 617.5px;" data-block-id="3a184df395416bbefca2bc6677ac9feb" data-name="code-53eacc"><div class="sl-block-content notranslate" data-highlight-theme="xcode" data-code-frame="none" style="z-index: 12;"><pre style="font-size: 35px; line-height: 42px; tab-size: 4;" class="typescript"><code data-line-numbers="">// Usage
+cy.loginByApi(Role.Moderator)</code></pre></div></div>
+<div class="sl-block" data-block-type="image" data-name="image-03857e" style="width: 71.4px; height: 71.4px; left: 1208.6px; top: 0.6px; min-width: 1px; min-height: 1px;" data-block-id="6f2af298da7c41dcebef037d661025e2"><div class="sl-block-content" style="z-index: 13;"><img class="" data-natural-width="150" data-natural-height="150" data-lazy-loaded="" data-src="lessons-from-e2e-testing-web-applications-django-con-2024/1792cb56dd025ab36d3147ce25d61d88.svg"></div></div></section><section data-id="fa19526e0c75612124c45ca2b7af1c03"><div class="sl-block" data-block-type="text" style="width: 856px; left: 212px; top: 165px; height: auto;" data-block-id="2b193a54d3af53816c6341b254f0a80a" data-name="text-a463d9"><div class="sl-block-style" style="z-index: 10; transform: rotate(0deg);"><div class="sl-block-content" data-placeholder-tag="h1" style="font-size: 200%; text-align: left; z-index: 10;" data-placeholder-text="Text"><h1>But,<br>
+Caution ⚠️</h1></div></div></div></section><section data-id="663682d6269e2d81ccb1aeb876d86a26"><div class="sl-block" data-block-type="code" data-name="code-595252" style="width: 1280px; height: 252px; left: 0px; top: 144px;" data-block-id="c5ab1fafa7cafd32fa17a9ff469f0fce"><div class="sl-block-content notranslate" data-highlight-theme="xcode" data-code-frame="none" style="z-index: 10;"><pre style="font-size: 40px; line-height: 48px; tab-size: 4;" class="typescript"><code data-line-numbers="">Cypress.Commands.add('loginAndVisitProfile', 
+                     () =&gt; { /* ... */ })
+
+Cypress.Commands.add('logoutAndReturnHome', 
+                     () =&gt; { /* ... */ })</code></pre></div></div>
+<div class="sl-block" data-block-type="text" style="width: 1076px; left: 102px; top: 36.3px; height: auto;" data-name="text-c54df3" data-block-id="db55daa82daa7646e34c37ad512a9940"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 11;"><h2>❌ Not like this...</h2></div></div>
+<div class="sl-block" data-block-type="text" style="width: 1076px; left: 102px; top: 467px; height: auto;" data-block-id="cd0875b711b7e519f4e2ad282f678363" data-name="text-3c0e4d"><div class="sl-block-content fragment" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 12;" data-fragment-index="0"><h2>✅ Instead like this...</h2></div></div>
+<div class="sl-block" data-block-type="code" style="width: 1280px; height: 118px; left: 0px; top: 576px;" data-block-id="3f1c7e992ffc0917b016bb3f391bafb0" data-name="code-94d598"><div class="sl-block-content notranslate fragment" data-highlight-theme="xcode" data-code-frame="none" style="z-index: 13;" data-fragment-index="0"><pre style="font-size: 40px; line-height: 48px; tab-size: 4;" class="typescript"><code data-line-numbers="">cy.login()
+cy.visit('/profile')</code></pre></div></div>
+<div class="sl-block" data-block-type="image" data-name="image-03857e" style="width: 71.4px; height: 71.4px; left: 1208.6px; top: 0.6px; min-width: 1px; min-height: 1px;" data-block-id="fd790b18d3031e379acb7b35353bf117"><div class="sl-block-content" style="z-index: 14;"><img class="" data-natural-width="150" data-natural-height="150" data-lazy-loaded="" data-src="lessons-from-e2e-testing-web-applications-django-con-2024/1792cb56dd025ab36d3147ce25d61d88.svg"></div></div></section><section data-id="9abd99f0078ee313db105e9102c475ed"><div class="sl-block" data-block-type="code" data-name="code-595252" style="width: 1280px; height: 487px; left: -1px; top: 188.5px;" data-block-id="0a4ada18b21d92bbd158b50c6e3ab006"><div class="sl-block-content notranslate" data-highlight-theme="xcode" data-code-frame="none" style="z-index: 10;"><pre style="font-size: 33px; line-height: 40px; tab-size: 4;" class="typescript"><code data-line-numbers="">test.beforeEach(async ({ page }) =&gt; {
+  await page.goto('/login')
+  await page.getByRole('button', { name: 'Log in' }).click()
+  await page
+    .getByRole('textbox', { name: 'Username' })
+    .fill(LOGIN_EMAIL)
+  await page
+    .getByRole('textbox', { name: 'Password' })
+  	.fill(LOGIN_PASSWORD)
+  await page.waitForURL('/')
+})</code></pre></div></div>
+<div class="sl-block" data-block-type="text" style="width: 1076px; left: 101px; top: 35px; height: auto;" data-name="text-c54df3" data-block-id="d09e2e1e4028ea304965449bb8162224"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 11;"><h2>⚠️ Login logic</h2></div></div>
+<div class="sl-block" data-block-type="image" data-name="image-ac296d" style="width: 93.3333px; height: 70px; left: 1186.67px; top: 0px; min-width: 1px; min-height: 1px;" data-block-id="c3b575238a1a48bb19baae188b737317"><div class="sl-block-content" style="z-index: 12;"><img class="" data-natural-width="256" data-natural-height="192" data-lazy-loaded="" data-src="lessons-from-e2e-testing-web-applications-django-con-2024/6e1a48c55b3a5f78f625baadac354c81.svg"></div></div></section><section data-id="bd8c836335e101f207c5e0c2115040b7"><div class="sl-block" data-block-type="code" data-name="code-595252" style="width: 1280px; height: 646px; left: 0.0033px; top: 74px;" data-block-id="469401c764952c9bb058b274ed5c44b8"><div class="sl-block-content notranslate" data-highlight-theme="xcode" data-code-frame="none" style="z-index: 10;"><pre style="font-size: 31px; line-height: 37px; tab-size: 4;" class="typescript"><code data-line-numbers="">import { test as base } from '@playwright/test';
+
+const test = base.extend({
+  webApp: async ({ page }, use) =&gt; {
+    await page.goto('/login')
+    await page.getByRole('button', { name: 'Log in' })
+      .click()
+    await page
+      .getByRole('textbox', { name: 'Username' })
+      .fill(LOGIN_EMAIL)
+    await page
+      .getByRole('textbox', { name: 'Password' })
+      .fill(LOGIN_PASSWORD)
+    await page.waitForURL('/')
+    await use(page)
+  }
+})
+</code></pre></div></div>
+<div class="sl-block" data-block-type="text" style="width: 1076px; left: 102.003px; top: 0px; height: auto;" data-name="text-c54df3" data-block-id="5ac6efb3ab328cafc3288d2bc036b107"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 11;"><h2>✅ Use a fixture (1)</h2></div></div>
+<div class="sl-block" data-block-type="image" data-name="image-ac296d" style="width: 93.3333px; height: 70px; left: 1186.67px; top: 0px; min-width: 1px; min-height: 1px;" data-block-id="68156e4cec799651102a052a2118d468"><div class="sl-block-content" style="z-index: 12;"><img class="" data-natural-width="256" data-natural-height="192" data-lazy-loaded="" data-src="lessons-from-e2e-testing-web-applications-django-con-2024/6e1a48c55b3a5f78f625baadac354c81.svg"></div></div></section><section data-id="13b811cb3310cac2339f0ba78fb68bfb"><div class="sl-block" data-block-type="code" data-name="code-595252" style="width: 1280px; height: 233px; left: 0.0033px; top: 315.5px;" data-block-id="d4a8bb101e6773d7a026c377db477d2a"><div class="sl-block-content notranslate" data-highlight-theme="xcode" data-code-frame="none" style="z-index: 10;"><pre style="font-size: 35px; line-height: 42px; tab-size: 4;" class="typescript"><code data-line-numbers="">test('should add an item', async ({ webApp }) =&gt; {
+  await webApp.getByRole('heading', { name: 'Add Todo' })
+    .toBeVisible()
+  // ...
+})</code></pre></div></div>
+<div class="sl-block" data-block-type="text" style="width: 1076px; left: 102px; top: 70px; height: auto;" data-name="text-c54df3" data-block-id="9fca8e3b2e6a547db0f5b0700a40f27b"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 11;"><h2>✅ Use a fixture (2)</h2></div></div>
+<div class="sl-block" data-block-type="image" data-name="image-ac296d" style="width: 93.3333px; height: 70px; left: 1186.67px; top: 0px; min-width: 1px; min-height: 1px;" data-block-id="e1647c1e34841e0dfa529bf2e8fda222"><div class="sl-block-content" style="z-index: 12;"><img class="" data-natural-width="256" data-natural-height="192" data-lazy-loaded="" data-src="lessons-from-e2e-testing-web-applications-django-con-2024/6e1a48c55b3a5f78f625baadac354c81.svg"></div></div></section><section data-id="cc871dec37e738b73ab289784544e87d"><div class="sl-block" data-block-type="text" style="width: 1280px; left: 0px; top: 455px; height: auto;" data-block-id="46eb6503c75b905e10b03e7a24e05c83"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 10;"><h1> <span style="font-size:0.9em">💡 Using only UI for Setup/Teardown</span>
+</h1></div></div>
+<div class="sl-block" data-block-type="image" data-name="image-17f08a" style="width: 413.7px; height: 275.8px; left: 433.15px; top: 78.1px; min-width: 1px; min-height: 1px;" data-block-id="11de7921da4f6185c2cdcc76654402b2"><div class="sl-block-content" style="z-index: 11;"><img class="" data-natural-width="1920" data-natural-height="1280" data-lazy-loaded="" data-src="lessons-from-e2e-testing-web-applications-django-con-2024/f64745ae6d0dd80d89d248f17bfde2b7"></div></div></section><section data-id="4a97a52ba82fc7c607d8771cf560f254"><div class="sl-block" data-block-type="image" data-name="image-cf44aa" data-block-id="87bba4190d3f1b736879aa6211fd3c2f" style="width: 1075.2px; height: 508.48px; left: 102.4px; top: 105.76px; min-width: 1px; min-height: 1px;"><div class="sl-block-content" style="z-index: 10;"><img class="" data-natural-width="480" data-natural-height="227" data-lazy-loaded="" data-src="lessons-from-e2e-testing-web-applications-django-con-2024/19c1a3729ac9b619c472a2ae908bee4b.gif"></div></div></section><section data-id="8050350df675b844064217669acd3dc2"><div class="sl-block" data-block-type="code" data-name="code-595252" style="width: 1280px; height: 576px; left: 0px; top: 144px;" data-block-id="8744b0ba56061e7b17ab7be8c29354a6"><div class="sl-block-content notranslate" data-highlight-theme="xcode" data-code-frame="none" style="z-index: 10;"><pre style="font-size: 26px; line-height: 31px; tab-size: 4;" class="typescript"><code data-line-numbers="">// Contrived example
+Cypress.Commands.add('loginByApi', (role: Role = Role.SystemAdmin) =&gt; {
+  const loginEmail: string = Cypress.env('credentials')?
+        .[role]?.['loginEmail']
+  const loginPassword: string = Cypress.env('credentials')?
+        .[role]?.['loginPassword']
+
+  if (!loginEmail) {
+    throw new Error('Missing login email value, set on cypress.env.json')
+  }
+
+  if (!loginPassword) {
+    throw new Error('Missing login password value, set on cypress.env.json')
+  }
+  
+  ...
+})</code></pre></div></div>
+<div class="sl-block" data-block-type="text" style="width: 1076px; left: 102px; top: 36.3px; height: auto;" data-name="text-c54df3" data-block-id="fc087425cdd146994548ac41f42d5dea"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 11;"><h2>✅ Logging in programmatically (1)</h2></div></div>
+<div class="sl-block" data-block-type="image" data-name="image-03857e" style="width: 71.4px; height: 71.4px; left: 1208.6px; top: 0.6px; min-width: 1px; min-height: 1px;" data-block-id="52a664e18918eaed03fb4f74b9aa62a6"><div class="sl-block-content" style="z-index: 12;"><img class="" data-natural-width="150" data-natural-height="150" data-lazy-loaded="" data-src="lessons-from-e2e-testing-web-applications-django-con-2024/1792cb56dd025ab36d3147ce25d61d88.svg"></div></div></section><section data-id="1cef2261b08d05d32a81f101c0d7ccc9"><div class="sl-block" data-block-type="code" data-name="code-595252" style="width: 1280px; height: 625px; left: 0px; top: 95px;" data-block-id="5e9db9332577bd09cfed6814c37ecaf8"><div class="sl-block-content notranslate" data-highlight-theme="xcode" data-code-frame="none" style="z-index: 10;"><pre style="font-size: 23px; line-height: 28px; tab-size: 4;" class="typescript"><code data-line-numbers="">// Contrived example
+Cypress.Commands.add('loginByApi', (role: Role = Role.SystemAdmin) =&gt; {
+ 
+  ...
+
+  cy.session([loginEmail, loginPassword], () =&gt; {
+    cy.request({
+      url: '/login',
+      method: 'POST',
+      body: {
+        email: loginEmail,
+        password: loginPassword,
+      },
+    })
+      .its('body')
+      .then(body =&gt; {
+        if (body.token) {
+          window.sessionStorage.setItem('authToken', body.token)
+        }
+      })
+  })
+})</code></pre></div></div>
+<div class="sl-block" data-block-type="text" style="width: 1076px; left: 102px; top: 0.6px; height: auto;" data-name="text-c54df3" data-block-id="f3c09879cd17e2146e03d95893e2982b"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 11;"><h2>✅ Logging in programmatically (2)</h2></div></div>
+<div class="sl-block" data-block-type="image" data-name="image-03857e" style="width: 71.4px; height: 71.4px; left: 1208.6px; top: 0.6px; min-width: 1px; min-height: 1px;" data-block-id="e79df10505eacd152f131b56da9ea89b"><div class="sl-block-content" style="z-index: 12;"><img class="" data-natural-width="150" data-natural-height="150" data-lazy-loaded="" data-src="lessons-from-e2e-testing-web-applications-django-con-2024/1792cb56dd025ab36d3147ce25d61d88.svg"></div></div></section><section data-id="f966423af7a6fbc3fe7252effe5d7b72"><div class="sl-block" data-block-type="code" data-name="code-595252" style="width: 1280px; height: 458px; left: 0px; top: 241.5px;" data-block-id="91a7a09e45de6d4074f88f2e13ac5f3d"><div class="sl-block-content notranslate" data-highlight-theme="xcode" data-code-frame="none" style="z-index: 10;"><pre style="font-size: 34px; line-height: 41px; tab-size: 4;" class="typescript"><code data-line-numbers="">// Contrived example
+test('authenticate', async ({ request }) =&gt; {
+  await request.post('/login', {
+    body: {
+      email: LOGIN_EMAIL,
+      password: LOGIN_PASSWORD
+    }
+  })
+  await request.storageState({ path: 'storageState.json' })
+})</code></pre></div></div>
+<div class="sl-block" data-block-type="text" style="width: 1076px; left: 80px; top: 70px; height: auto;" data-name="text-c54df3" data-block-id="b4d3581966e7d72b93d1ba83c66a77f6"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 11;"><h2>✅ Logging in programmatically</h2></div></div>
+<div class="sl-block" data-block-type="image" data-name="image-ac296d" style="width: 93.3333px; height: 70px; left: 1186.67px; top: 0px; min-width: 1px; min-height: 1px;" data-block-id="4fa96469ba9ee813acc192af1a0c67b1"><div class="sl-block-content" style="z-index: 12;"><img class="" data-natural-width="256" data-natural-height="192" data-lazy-loaded="" data-src="lessons-from-e2e-testing-web-applications-django-con-2024/6e1a48c55b3a5f78f625baadac354c81.svg"></div></div></section><section data-id="a80fb5c597ddbaa832184a2767e649cc"><div class="sl-block" data-block-type="text" style="width: 1075px; left: 102px; top: 179px; height: auto;" data-block-id="24a186bd00feb9a9483562ca856ed436"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10;"><h2>And more...</h2></div></div>
+<div class="sl-block" data-block-type="text" style="width: 1075px; left: 102px; top: 315px; height: auto;" data-block-id="eaef988a16302ad4df09e8a3743d0a3a"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11; line-height: 1.95;" data-has-line-height=""><ul>
+	<li>Logging out</li>
+	<li>Creating a user</li>
+	<li>Deleting a user</li>
+	<li>Setting permissions</li>
+	<li>Cleanup db etc.</li>
+</ul></div></div></section><section data-id="ab599d0e7dd625f058ca9ec905727a73"><div class="sl-block" data-block-type="text" style="width: 1076px; left: 102px; top: 432px; height: auto;" data-block-id="5e051c4432e0e1e0c5da0fa4bd88b7e8"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 10;"><h1> 💡 Inadequate selectors</h1></div></div>
+<div class="sl-block" data-block-type="image" data-name="image-17f08a" style="width: 413.7px; height: 275.8px; left: 433.15px; top: 78.1px; min-width: 1px; min-height: 1px;" data-block-id="7555fa50f075091b1268b414598e9de8"><div class="sl-block-content" style="z-index: 11;"><img class="" data-natural-width="1920" data-natural-height="1280" data-lazy-loaded="" data-src="lessons-from-e2e-testing-web-applications-django-con-2024/f64745ae6d0dd80d89d248f17bfde2b7"></div></div></section><section data-id="71baaa4122e4a7f133147dc478c74387"><div class="sl-block" data-block-type="code" data-name="code-595252" style="width: 891.5px; height: 503px; left: 172.25px; top: 180.5px;" data-block-id="62a5876b4869679ff33bb8811df34fc2"><div class="sl-block-content notranslate" data-highlight-theme="xcode" data-code-frame="none" style="z-index: 10;"><pre style="font-size: 35px; line-height: 42px;" class="typescript"><code>cy.get('button').click()              ❌
+
+cy.get('.btn.btn-large').click()      ❌
+
+cy.get('#main').click()               ⚠️
+
+cy.get('[name="submission"]').click() ⚠️
+
+cy.contains('Submit').click()         ✅
+
+cy.get('[data-cy="submit"]').click()  ✅
+</code></pre></div></div>
+<div class="sl-block" data-block-type="text" style="width: 1076px; left: 80px; top: 70px; height: auto;" data-name="text-c54df3" data-block-id="21f2ef6a4c227b87b3651092cad7417a"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 11;"><h2>ℹ️ Cypress recommendation</h2></div></div>
+<div class="sl-block" data-block-type="image" data-name="image-03857e" style="width: 71.4px; height: 71.4px; left: 1208.6px; top: 0.6px; min-width: 1px; min-height: 1px;" data-block-id="c55764e75c012d14aca30e9aebd36a99"><div class="sl-block-content" style="z-index: 12;"><img class="" data-natural-width="150" data-natural-height="150" data-lazy-loaded="" data-src="lessons-from-e2e-testing-web-applications-django-con-2024/1792cb56dd025ab36d3147ce25d61d88.svg"></div></div></section><section data-id="b6b9436444f5d00f8d1ffb6fde6e4745">
+<div class="sl-block" data-block-type="text" style="width: 1076px; left: 72px; top: 61px; height: auto;" data-name="text-c54df3" data-block-id="e11956bb6047613de93c941365ebed5d"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10;"><h2>ℹ️ My recommendation</h2></div></div>
+<div class="sl-block" data-block-type="text" style="width: 1016px; left: 132px; top: 379.5px; height: auto;" data-block-id="b810fb8e1b013d84f773fd7830ace3f7" data-name="text-aa7bc5"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 11;"><h1>
+<a href="https://testing-library.com/docs/cypress-testing-library/intro/" target="_blank">Testing Library/Cypress</a> 🐙</h1></div></div>
+<div class="sl-block" data-block-type="image" data-name="image-03857e" style="width: 71.4px; height: 71.4px; left: 1208.6px; top: 0.6px; min-width: 1px; min-height: 1px;" data-block-id="d4dc94d66331a51e12e665379b523a5d"><div class="sl-block-content" style="z-index: 12;"><img class="" data-natural-width="150" data-natural-height="150" data-lazy-loaded="" data-src="lessons-from-e2e-testing-web-applications-django-con-2024/1792cb56dd025ab36d3147ce25d61d88.svg"></div></div></section><section data-id="e4746dc830520f34a1806a0a6e2e879b"><div class="sl-block" data-block-type="text" style="width: 656px; left: 72px; top: 165px; height: auto;" data-block-id="168c6f04f31ec1bfd383227bba082ccc"><div class="sl-block-content" data-placeholder-tag="h1" style="font-size: 200%; text-align: left; z-index: 10;" data-placeholder-text="Text"><h1>Here's<br>
+Why</h1></div></div>
+<div class="sl-block" data-block-type="image" data-name="image-8e211d" data-block-id="202834442bf5b6fee7c9e0b4b4c6a906" style="width: 480px; height: 720px; left: 800px; top: 0px; min-width: 1px; min-height: 1px;"><div class="sl-block-content" style="z-index: 11;"><img class="" data-natural-width="1920" data-natural-height="2880" data-lazy-loaded="" data-src="lessons-from-e2e-testing-web-applications-django-con-2024/18f386a2dc4ebc1eb5b96c1c389bff8c"></div></div></section><section data-id="93b07b1b29509012d36615784409e2da"><div class="sl-block" data-block-type="text" style="width: 480px; left: 720px; top: 72px; height: auto;" data-block-id="c59a8726aa1e067a39f8540ef2d21261" data-name="text-15ebd6"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="text-align: left; z-index: 10;">
+<h2>Test Like a User</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 413px; left: 720px; top: 216px; height: auto;" data-block-id="d6739f7fb2132e4120b9681034e6d9cd" data-name="text-263fd9"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi nec metus justo. Aliquam erat volutpat." style="z-index: 12; text-align: left;">
+<p><span style="color:rgb(36, 41, 46)">It should be generally useful for testing the application components in the way the user would use it.</span></p>
+</div></div>
+<div class="sl-block" data-block-type="image" style="width: 480px; height: 720px; left: 160px; top: 0px; min-width: 1px; min-height: 1px;" data-block-id="ed814d8180a70c3b7385123dc16ef582" data-name="image-0417dc"><div class="sl-block-content" style="z-index: 11;"><img style="" data-natural-width="1920" data-natural-height="2880" data-lazy-loaded="" data-src="lessons-from-e2e-testing-web-applications-django-con-2024/2b3f21a11b2ab973cd11c1cb9df0868b"></div></div></section><section data-id="242d1802bf3dc4be7958ffc49007283b"><div class="sl-block" data-block-type="text" style="width: 806px; left: 237px; top: 80px; height: auto;" data-block-id="997fd754b7efc8d3046881950ba5bbf9" data-name="text-b2f4aa"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 10;"><h2>Queries by Priority</h2></div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 960px; left: 160px; top: 203px;" data-block-id="f384365ec13b77d425d049bc97cf7842" data-name="text-c76455"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11; line-height: 1.755;" data-has-line-height=""><ul>
+	<li>findByRole</li>
+	<li>findByLabelText</li>
+	<li>findByPlaceholderText</li>
+	<li>findByText</li>
+	<li>findByDisplayValue</li>
+	<li>findByAltText</li>
+	<li>findByTitle</li>
+	<li>findByTestId</li>
+</ul></div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 274px; left: 503px; top: 680px;" data-block-id="cea4fd034b055ffd498a719a036bc7cc" data-name="text-471a22"><a class="sl-block-style" style="z-index: 12;" href="https://testing-library.com/docs/queries/about#types-of-queries" target="_blank"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 12; font-size: 35%;">
+<p><span style="font-size:1.0em">Testing Library</span></p>
+</div></a></div></section><section data-id="265278fb931d949f3b36705802c50098"><div class="sl-block" data-block-type="code" data-name="code-595252" style="width: 1280px; height: 400px; left: 0px; top: 240px;" data-block-id="5c6c3a674fb08099c8530ac8f1fed441"><div class="sl-block-content notranslate" data-highlight-theme="xcode" data-code-frame="none" style="z-index: 10;"><pre style="font-size: 35px; line-height: 42px;" class="typescript"><code data-line-numbers="">cy.findByRole('button', { name: /save comment/i })
+  .should('be.enabled')
+  .click()
+  
+cy.findByRole('dialog').within(() =&gt; {
+  cy.findByRole('button', { name: /confirm/i })
+})
+
+cy.findByText(/heroes/i).should('exist')
+</code></pre></div></div>
+<div class="sl-block" data-block-type="text" style="width: 1076px; left: 80px; top: 70px; height: auto;" data-name="text-c54df3" data-block-id="3af90318a1e79def49f84c58844b3b6e"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 11;"><h2>✅ Cypress Testing Library</h2></div></div>
+<div class="sl-block" data-block-type="image" data-name="image-03857e" style="width: 71.4px; height: 71.4px; left: 1208.6px; top: 0.6px; min-width: 1px; min-height: 1px;" data-block-id="6ec2a688436ed5c4639a0402056ffc72"><div class="sl-block-content" style="z-index: 12;"><img class="" data-natural-width="150" data-natural-height="150" data-lazy-loaded="" data-src="lessons-from-e2e-testing-web-applications-django-con-2024/1792cb56dd025ab36d3147ce25d61d88.svg"></div></div></section><section data-id="d154056e093000cb205572461d93cfeb"><div class="sl-block" data-block-type="text" style="width: 952px; left: 164px; top: 35px; height: auto;" data-block-id="08dc7bf060e511a8d3d0fe53f36d2b59" data-name="text-fc4481"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 10;"><h2>Testing Playground 🐸</h2></div></div>
+<div class="sl-block" data-block-type="iframe" data-name="iframe-91801e" style="width: 1280px; height: 576px; left: 0px; top: 144px;" data-block-id="e8a64548eb6ec883af707db78ed0435f"><div class="sl-block-content" style="z-index: 11;"><iframe allow="fullscreen; accelerometer; geolocation; gyroscope; camera; encrypted-media; microphone; midi; autoplay" data-src="https://testing-playground.com/" sandbox="allow-forms allow-scripts allow-popups allow-same-origin allow-pointer-lock allow-presentation"></iframe></div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; width: 274px; left: 503px; top: 706px;" data-name="text-73f839" data-block-id="f616e228c9bf9e9943662655f18276ff"><a class="sl-block-style" style="z-index: 12;" href="https://testing-playground.com/" target="_blank"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 12; font-size: 35%;">
+<p><span style="font-size:1.0em">Testing Playground</span></p>
+</div></a></div></section><section data-id="523b8403a57d61c94c507be1948742be"><div class="sl-block" data-block-type="text" style="width: 800px; left: 0px; top: 103.5px; height: auto;" data-block-id="d33ce727fad5d4113b1e7d067a8a8b3d"><div class="sl-block-content" data-placeholder-tag="h1" style="font-size: 200%; text-align: left; z-index: 10;" data-placeholder-text="Text">
+<h1><span style="font-size:0.9em">"Aha!"</span></h1>
+
+<h1><span style="font-size:0.9em">-Playwright</span></h1>
+
+<p> </p>
+</div></div>
+<div class="sl-block" data-block-type="image" data-name="image-8e211d" style="width: 480px; height: 720px; left: 800px; top: 0px; min-width: 1px; min-height: 1px;" data-block-id="30abdfc921609fa860a9e20fbb2d6b85"><div class="sl-block-content" style="z-index: 11;"><img class="" data-natural-width="1920" data-natural-height="2880" data-lazy-loaded="" data-src="lessons-from-e2e-testing-web-applications-django-con-2024/c59ff5c67a50e1e7d9bbdffbc7fae31e"></div></div></section><section data-id="75376b9669baf9291c5de0ae90e315f2"><div class="sl-block" data-block-type="code" data-name="code-595252" style="width: 1280px; height: 322px; left: 0.0033px; top: 271px;" data-block-id="1eefd185aff5428f9322b4d67527c4e6"><div class="sl-block-content notranslate" data-highlight-theme="xcode" data-code-frame="none" style="z-index: 10;"><pre style="font-size: 35px; line-height: 42px; tab-size: 4;" class="typescript"><code data-line-numbers="">page.getByRole('button', { name: 'submit' })
+  
+await page
+    .getByRole('listitem')
+    .filter({ hasText: 'Product 2' })
+    .getByRole('button', { name: 'Add to cart' })
+    .click()
+</code></pre></div></div>
+<div class="sl-block" data-block-type="text" style="width: 1076px; left: 80px; top: 70px; height: auto;" data-name="text-c54df3" data-block-id="06189a0d7128b6f4364fb84e7aee99a7"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 11;"><h2>✅ Locators</h2></div></div>
+<div class="sl-block" data-block-type="image" data-name="image-ac296d" style="width: 93.3333px; height: 70px; left: 1186.67px; top: 0px; min-width: 1px; min-height: 1px;" data-block-id="997cc2dd1f18508400ca8f360405a71f"><div class="sl-block-content" style="z-index: 12;"><img class="" data-natural-width="256" data-natural-height="192" data-lazy-loaded="" data-src="lessons-from-e2e-testing-web-applications-django-con-2024/6e1a48c55b3a5f78f625baadac354c81.svg"></div></div></section><section data-id="dc5a579d57871d308a47246ad3edf127"><div class="sl-block" data-block-type="code" data-name="code-595252" style="width: 1280px; height: 252.75px; left: 0.0033px; top: 305.625px;" data-block-id="4fe1e27b6cbc0c9b904d50475afecf14"><div class="sl-block-content notranslate" data-highlight-theme="xcode" data-code-frame="none" style="z-index: 10;"><pre style="font-size: 35px; line-height: 42px; tab-size: 4;" class="typescript"><code data-line-numbers="">// 👎
+page.locator('button.buttonIcon.myButtonIcon')
+
+// 👍
+page.getByRole('button', { name: 'submit' })
+</code></pre></div></div>
+<div class="sl-block" data-block-type="text" style="width: 1076px; left: 80px; top: 70px; height: auto;" data-name="text-c54df3" data-block-id="38a2962290f01977496362c5148191ba"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 11;"><h2>✅ Resilient locators</h2></div></div>
+<div class="sl-block" data-block-type="image" data-name="image-ac296d" style="width: 93.3333px; height: 70px; left: 1186.67px; top: 0px; min-width: 1px; min-height: 1px;" data-block-id="903c0aa0d87b14495f44a1a7c2abb02d"><div class="sl-block-content" style="z-index: 12;"><img class="" data-natural-width="256" data-natural-height="192" data-lazy-loaded="" data-src="lessons-from-e2e-testing-web-applications-django-con-2024/6e1a48c55b3a5f78f625baadac354c81.svg"></div></div></section><section data-id="036136175bae6dc6796ace4764753a10"><div class="sl-block" data-block-type="text" style="width: 1076px; left: 102px; top: 432px; height: auto;" data-block-id="36017f23f4107bdeee6274df47528db3"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 10;"><h1> 💡 Not isolating tests</h1></div></div>
+<div class="sl-block" data-block-type="image" data-name="image-17f08a" style="width: 413.7px; height: 275.8px; left: 433.15px; top: 78.1px; min-width: 1px; min-height: 1px;" data-block-id="ca6c64235d29a5d9050ca433c5846264"><div class="sl-block-content" style="z-index: 11;"><img class="" data-natural-width="1920" data-natural-height="1280" data-lazy-loaded="" data-src="lessons-from-e2e-testing-web-applications-django-con-2024/f64745ae6d0dd80d89d248f17bfde2b7"></div></div></section><section data-id="74ed90e4db35f3413efa1ea5eabd2b04"><div class="sl-block" data-block-type="code" data-name="code-595252" style="width: 1280px; height: 622px; left: 0px; top: 98px;" data-block-id="2f7642acdae18d698fabadb44595d2ed"><div class="sl-block-content notranslate" data-highlight-theme="xcode" data-code-frame="none" style="z-index: 10;"><pre style="font-size: 30px; line-height: 36px;" class="typescript"><code data-line-numbers="">describe('add todo form', () =&gt; {
+  it('should visit the add todo form', () =&gt; {
+    cy.visit('/todos/new')
+  })
+
+  it('should add a todo', () =&gt; {
+    cy.get('.new-todo').type('first item{enter}')
+  })
+
+  it('should add a todo priority', () =&gt; {
+    cy.get('.new-todo-priority').type('1{enter}')
+  })
+
+  it('should submit a valid add todo form', () =&gt; {
+    cy.get('form').submit()
+  })
+})
+</code></pre></div></div>
+<div class="sl-block" data-block-type="text" style="width: 1076px; left: 102px; top: 0.6px; height: auto;" data-name="text-c54df3" data-block-id="d5ed3fc2ce969253e213ca4fb9c3b5a6"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 11;"><h2>❌ Non atomic test (1)</h2></div></div>
+<div class="sl-block" data-block-type="image" data-name="image-03857e" style="width: 71.4px; height: 71.4px; left: 1208.6px; top: 0.6px; min-width: 1px; min-height: 1px;" data-block-id="86c11c1dbb57e3607bd8d0a877d693b2"><div class="sl-block-content" style="z-index: 12;"><img class="" data-natural-width="150" data-natural-height="150" data-lazy-loaded="" data-src="lessons-from-e2e-testing-web-applications-django-con-2024/1792cb56dd025ab36d3147ce25d61d88.svg"></div></div></section><section data-id="66082cd561548a3cb17d178b3bf459f2"><div class="sl-block" data-block-type="code" data-name="code-595252" style="width: 1280px; height: 645.4px; left: 0px; top: 74.6px;" data-block-id="48c257171ccfb58a2c8e17cf43f9a3a4"><div class="sl-block-content notranslate" data-highlight-theme="xcode" data-code-frame="none" style="z-index: 10;"><pre style="font-size: 31px; line-height: 37px;" class="typescript"><code data-line-numbers="6-8">describe('add todo form', () =&gt; {
+  it('should visit the add todo form', () =&gt; {
+    cy.visit('/todos/new')
+  })
+
+  it.only('should add a todo', () =&gt; {
+    cy.get('.new-todo').type('first item{enter}')
+  })
+
+  it('should add a todo priority', () =&gt; {
+    cy.get('.new-todo-priority').type('1{enter}')
+  })
+
+  it('should submit a valid add todo form', () =&gt; {
+    cy.get('form').submit()
+  })
+})
+</code></pre></div></div>
+<div class="sl-block" data-block-type="text" style="width: 1076px; left: 102px; top: 0.6px; height: auto;" data-name="text-c54df3" data-block-id="cca29e21f9d14e6564078bf6b7179cc4"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 11;"><h2>❌ Non atomic test (2)</h2></div></div>
+<div class="sl-block" data-block-type="image" data-name="image-03857e" style="width: 71.4px; height: 71.4px; left: 1208.6px; top: 0.6px; min-width: 1px; min-height: 1px;" data-block-id="39b6a91874e7833e41a537c3485bc9af"><div class="sl-block-content" style="z-index: 12;"><img class="" data-natural-width="150" data-natural-height="150" data-lazy-loaded="" data-src="lessons-from-e2e-testing-web-applications-django-con-2024/1792cb56dd025ab36d3147ce25d61d88.svg"></div></div></section><section data-id="37bde2cb0ff1c1e92dc9694222e2ae80"><div class="sl-block" data-block-type="text" style="width: 1075px; left: 102px; top: 274px; height: auto;" data-block-id="e12e2c2647e6c091f6f089f8b1dbd6ec"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 10;"><h1> 🛑 FAILED❗</h1></div></div></section><section data-id="a08329dc4197b5b8d16ca79b76bdf2b9"><div class="sl-block" data-block-type="code" data-name="code-595252" style="width: 1280px; height: 354px; left: 0px; top: 255px;" data-block-id="ecec8e9fb8fcd8af66f0eda3379c9dff"><div class="sl-block-content notranslate" data-highlight-theme="xcode" data-code-frame="none" style="z-index: 10;"><pre style="font-size: 35px; line-height: 42px;" class="typescript"><code data-line-numbers="">describe('add todo form', () =&gt; {
+  it('should submit a valid add todo form', () =&gt; {
+    cy.visit('/todos/new')
+    cy.get('.new-todo').type('first item{enter}')
+    cy.get('.new-todo-priority').type('1{enter}')
+    cy.get('form').submit()
+  })
+})
+</code></pre></div></div>
+<div class="sl-block" data-block-type="text" style="width: 1076px; left: 80px; top: 70px; height: auto;" data-name="text-c54df3" data-block-id="7b138257dbf92c5fac0574947448eec7"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 11;"><h2>✅ Combine into one test</h2></div></div>
+<div class="sl-block" data-block-type="image" data-name="image-03857e" style="width: 71.4px; height: 71.4px; left: 1208.6px; top: 0.6px; min-width: 1px; min-height: 1px;" data-block-id="39d862b9ceb33285edc0859f635dfa0f"><div class="sl-block-content" style="z-index: 12;"><img class="" data-natural-width="150" data-natural-height="150" data-lazy-loaded="" data-src="lessons-from-e2e-testing-web-applications-django-con-2024/1792cb56dd025ab36d3147ce25d61d88.svg"></div></div></section><section data-id="2a1a6dbac20c01b6f2d2c982c8e44576"><div class="sl-block" data-block-type="code" data-name="code-595252" style="width: 1280px; height: 587px; left: 0px; top: 133px;" data-block-id="85fd65d7368e1f53b19dc6208c60cbb2"><div class="sl-block-content notranslate" data-highlight-theme="xcode" data-code-frame="none" style="z-index: 10;"><pre style="font-size: 28px; line-height: 34px; tab-size: 4;" class="typescript"><code data-line-numbers="">describe('add todo form', () =&gt; {
+  beforeEach(() =&gt; {
+    cy.visit('/todos/new')
+    cy.get('.new-todo').type('first item{enter}')
+    cy.get('.new-todo-priority').type('1{enter}')
+  })
+  
+  it('should display an error when todo priority is missing', () =&gt; {
+    cy.get('.new-todo-priority').clear()
+    cy.get('form').submit()
+    cy.get('.form-errors').should('contain', 'Todo priority is required')
+  })
+  
+  it('should submit a valid add todo form', () =&gt; {
+    cy.get('form').submit()
+  })
+})</code></pre></div></div>
+<div class="sl-block" data-block-type="text" style="width: 1076px; left: 80px; top: 35px; height: auto;" data-name="text-c54df3" data-block-id="b8e64f7db3f6f13201cde80ccab2d376"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 11;"><h2>✅ Run shared code before each test</h2></div></div>
+<div class="sl-block" data-block-type="image" data-name="image-03857e" style="width: 71.4px; height: 71.4px; left: 1208.6px; top: 0.6px; min-width: 1px; min-height: 1px;" data-block-id="ddf30ad829bc81a95b56df41b20b2021"><div class="sl-block-content" style="z-index: 12;"><img class="" data-natural-width="150" data-natural-height="150" data-lazy-loaded="" data-src="lessons-from-e2e-testing-web-applications-django-con-2024/1792cb56dd025ab36d3147ce25d61d88.svg"></div></div></section><section data-id="01941ee7dfe042f69be65f231eaedf53"><div class="sl-block" data-block-type="code" data-name="code-595252" style="width: 1280px; height: 646px; left: 0px; top: 74px;" data-block-id="fd005d0a2a861aeb7befb65af6105e5a"><div class="sl-block-content notranslate" data-highlight-theme="xcode" data-code-frame="none" style="z-index: 10;"><pre style="font-size: 25px; line-height: 30px; tab-size: 4;" class="typescript"><code data-line-numbers="">test.describe('add todo form', () =&gt; {
+  test.beforeEach(async ({ page }) =&gt; {
+    await page.goto('/todos/new')
+    await page
+      .getByRole('textbox', { name: 'New Todo' })
+      .fill('first item')
+    await page
+      .getByRole('textbox', { name: 'New Todo Priority' })
+      .fill('1')
+  })
+  
+  test('should display an error when todo priority is missing', 
+       async ({ page }) =&gt; {
+	//...
+  })
+  
+  test('should submit a valid add todo form', 
+       async ({ page }) =&gt; {
+    //...
+  })
+})</code></pre></div></div>
+<div class="sl-block" data-block-type="text" style="width: 1076px; left: 102px; top: 0px; height: auto;" data-name="text-c54df3" data-block-id="d834bd024247dbd223f91ef19c2182a5"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 11;"><h2>✅ Run shared code before each test</h2></div></div>
+<div class="sl-block" data-block-type="image" data-name="image-ac296d" style="width: 93.3333px; height: 70px; left: 1186.67px; top: 0px; min-width: 1px; min-height: 1px;" data-block-id="d16c12d49d1bbc9bb4c6d586e1d74be9"><div class="sl-block-content" style="z-index: 12;"><img class="" data-natural-width="256" data-natural-height="192" data-lazy-loaded="" data-src="lessons-from-e2e-testing-web-applications-django-con-2024/6e1a48c55b3a5f78f625baadac354c81.svg"></div></div></section><section data-id="309ee925b295d96220e28d98b1794baa"><div class="sl-block" data-block-type="text" style="width: 1280px; left: 0px; top: 432px; height: auto;" data-block-id="495e2c509b3c8cb330f203490b80685f"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 10;"><h1> 💡 Handling network fluctuations</h1></div></div>
+<div class="sl-block" data-block-type="image" data-name="image-17f08a" style="width: 413.7px; height: 275.8px; left: 433.15px; top: 78.1px; min-width: 1px; min-height: 1px;" data-block-id="7f2d7fd48b3d57539f5cb4e9c842bd17"><div class="sl-block-content" style="z-index: 11;"><img class="" data-natural-width="1920" data-natural-height="1280" data-lazy-loaded="" data-src="lessons-from-e2e-testing-web-applications-django-con-2024/f64745ae6d0dd80d89d248f17bfde2b7"></div></div></section><section data-id="7d8c56ed1ee94e6a428ae39d6fb0199f"><div class="sl-block" data-block-type="image" data-name="image-d26529" data-block-id="bb83264d4d9eb7f85d0096a2bc26ce22" style="width: 532.8px; height: 532.8px; left: 373.6px; top: 93.6px; min-width: 1px; min-height: 1px;"><div class="sl-block-content" style="z-index: 10;"><img class="" data-natural-width="640" data-natural-height="640" data-lazy-loaded="" data-src="lessons-from-e2e-testing-web-applications-django-con-2024/57865b153861edb1d1c7ecd99b3c0bf8.gif"></div></div></section><section data-id="ae5ee3b1087227ef330077fc6f19be33"><div class="sl-block" data-block-type="code" data-name="code-595252" style="width: 1280px; height: 354px; left: 0px; top: 255px;" data-block-id="c42ab2e905ec89331f1fb6330f067ded"><div class="sl-block-content notranslate" data-highlight-theme="xcode" data-code-frame="none" style="z-index: 10;"><pre style="font-size: 35px; line-height: 42px;" class="typescript"><code data-line-numbers="|2">it('starts with zero items', () =&gt; {
+  cy.intercept('GET', '/todos').as('todos')
+  cy.visit('/')
+  cy.wait('@todos')
+    .its('response.body')
+    .should('have.length', 0)
+  cy.get('li.todo').should('have.length', 0)
+})</code></pre></div></div>
+<div class="sl-block" data-block-type="text" style="width: 1076px; left: 80px; top: 70px; height: auto;" data-name="text-c54df3" data-block-id="7046a7403091145e55266f01895157e7"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 11;"><h2>✅ Spies</h2></div></div>
+<div class="sl-block" data-block-type="image" data-name="image-03857e" style="width: 71.4px; height: 71.4px; left: 1208.6px; top: 0.6px; min-width: 1px; min-height: 1px;" data-block-id="60e51b60b6307191afe4bd6727c6c404"><div class="sl-block-content" style="z-index: 12;"><img class="" data-natural-width="150" data-natural-height="150" data-lazy-loaded="" data-src="lessons-from-e2e-testing-web-applications-django-con-2024/1792cb56dd025ab36d3147ce25d61d88.svg"></div></div></section><section data-id="66f2c9f4342d4f348149a9adbb86510a"><div class="sl-block" data-block-type="image" data-name="image-e3cb49" data-block-id="802e565cb7de6665dec1af45f5050e7e" style="width: 716px; height: 532.704px; left: 281.952px; top: 93.6px; min-width: 1px; min-height: 1px;"><div class="sl-block-content" style="z-index: 10;"><img class="" data-natural-width="500" data-natural-height="372" style="" data-lazy-loaded="" data-src="lessons-from-e2e-testing-web-applications-django-con-2024/5c52ac386b43e2d401409dfde20043fd.gif"></div></div></section><section data-id="a243d42e723f80fb64b5e6a71a0f11c3"><div class="sl-block" data-block-type="code" data-name="code-595252" style="width: 1280px; height: 353px; left: 0px; top: 255.5px;" data-block-id="2bcd11de09dfd42366ef66540e149f4a"><div class="sl-block-content notranslate" data-highlight-theme="xcode" data-code-frame="none" style="z-index: 10;"><pre style="font-size: 35px; line-height: 42px;" class="typescript"><code data-line-numbers="|2">it('starts with zero items (stubbed response)', () =&gt; {
+  cy.intercept('GET', '/todos', []).as('todos')
+  cy.visit('/')
+  cy.wait('@todos')
+    .its('response.body')
+    .should('have.length', 0)
+  cy.get('li.todo').should('have.length', 0)
+})</code></pre></div></div>
+<div class="sl-block" data-block-type="text" style="width: 1076px; left: 80px; top: 70px; height: auto;" data-name="text-c54df3" data-block-id="5464d89fda847ba2c4f7aab9552c98ad"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 11;"><h2>✅ Stubs</h2></div></div>
+<div class="sl-block" data-block-type="image" data-name="image-03857e" style="width: 71.4px; height: 71.4px; left: 1208.6px; top: 0.6px; min-width: 1px; min-height: 1px;" data-block-id="73d4ecddaed83279cadaa54d034b2291"><div class="sl-block-content" style="z-index: 12;"><img class="" data-natural-width="150" data-natural-height="150" data-lazy-loaded="" data-src="lessons-from-e2e-testing-web-applications-django-con-2024/1792cb56dd025ab36d3147ce25d61d88.svg"></div></div></section><section data-id="57e77c22cc596e5dba457d461530ebb0"><div class="sl-block" data-block-type="code" data-name="code-595252" style="width: 1280px; height: 363px; left: 0px; top: 250.5px;" data-block-id="f818f228576a6fa61af1eae0dfe44b53"><div class="sl-block-content notranslate" data-highlight-theme="xcode" data-code-frame="none" style="z-index: 10;"><pre style="font-size: 32px; line-height: 38px; tab-size: 4;" class="typescript"><code data-line-numbers="|2">it('starts with zero items (fixture)', () =&gt; {
+  cy.intercept('GET', '/todos', { fixture: 'empty-list.json' })
+    .as('todos')
+  cy.visit('/')
+  cy.wait('@todos')
+    .its('response.body')
+    .should('have.length', 0)
+  cy.get('li.todo').should('have.length', 0)
+})</code></pre></div></div>
+<div class="sl-block" data-block-type="text" style="width: 1076px; left: 80px; top: 70px; height: auto;" data-name="text-c54df3" data-block-id="b48129798aa0b7a45bb0bbecc7f26e15"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 11;"><h2>✅ Stubs using a fixture</h2></div></div>
+<div class="sl-block" data-block-type="image" data-name="image-03857e" style="width: 71.4px; height: 71.4px; left: 1208.6px; top: 0.6px; min-width: 1px; min-height: 1px;" data-block-id="a99055108b617b281178909226924cb3"><div class="sl-block-content" style="z-index: 12;"><img class="" data-natural-width="150" data-natural-height="150" data-lazy-loaded="" data-src="lessons-from-e2e-testing-web-applications-django-con-2024/1792cb56dd025ab36d3147ce25d61d88.svg"></div></div></section><section data-id="59d5699e032636aa6ff2ceb67b7c4098"><div class="sl-block" data-block-type="code" data-name="code-595252" style="width: 1280px; height: 412px; left: 0.0033px; top: 226px;" data-block-id="414b13b629927b348a8accecdd42d961"><div class="sl-block-content notranslate" data-highlight-theme="xcode" data-code-frame="none" style="z-index: 10;"><pre style="font-size: 32px; line-height: 38px; tab-size: 4;" class="typescript"><code data-line-numbers="|2-5">test('mocks a todo and doesn`t call api', async ({ page }) =&gt; {
+  await page.route('/todos', async route =&gt; {
+    const json = [{ name: 'First Item', id: 21 }]
+    await route.fulfill({ json })
+  })
+
+  await page.goto('/')
+
+  await expect(page.getByText('First Item')).toBeVisible()
+})</code></pre></div></div>
+<div class="sl-block" data-block-type="text" style="width: 1076px; left: 80px; top: 70px; height: auto;" data-name="text-c54df3" data-block-id="9468740ae8fdc21df9f00ead4985d5bc"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 11;"><h2>✅ Mock API Request</h2></div></div>
+<div class="sl-block" data-block-type="image" data-name="image-ac296d" style="width: 93.3333px; height: 70px; left: 1186.67px; top: 0px; min-width: 1px; min-height: 1px;" data-block-id="956e1f8ce413f12718d137a07d09f495"><div class="sl-block-content" style="z-index: 12;"><img class="" data-natural-width="256" data-natural-height="192" data-lazy-loaded="" data-src="lessons-from-e2e-testing-web-applications-django-con-2024/6e1a48c55b3a5f78f625baadac354c81.svg"></div></div></section><section data-id="cd04328671a2102b20d4d2ae5bac8617"><div class="sl-block" data-block-type="code" data-name="code-595252" style="width: 1280px; height: 598px; left: 0px; top: 122px;" data-block-id="90ef2458612fbd86d31211f36a72aace"><div class="sl-block-content notranslate" data-highlight-theme="xcode" data-code-frame="none" style="z-index: 10;"><pre style="font-size: 32px; line-height: 38px; tab-size: 4;" class="typescript"><code data-line-numbers="|3-8">test('gets the json from api and adds a new todo', 
+     async ({ page }) =&gt; {
+
+  await page.route('/todos', async route =&gt; {
+    const response = await route.fetch()
+    const json = await response.json()
+    json.push({ name: 'New Todo', id: 100 })
+    await route.fulfill({ response, json })
+  })
+
+  await page.goto('/')
+
+  await expect(page.getByText('New Todo', { exact: true }))
+    .toBeVisible()
+})</code></pre></div></div>
+<div class="sl-block" data-block-type="text" style="width: 1076px; left: 80px; top: 35px; height: auto;" data-name="text-c54df3" data-block-id="2cfc2e7f99c46de9da7d9e839f53223e"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 11;"><h2>✅ Modify API Responses</h2></div></div>
+<div class="sl-block" data-block-type="image" data-name="image-ac296d" style="width: 93.3333px; height: 70px; left: 1186.67px; top: 0px; min-width: 1px; min-height: 1px;" data-block-id="4656c52430e2b20685030fdb56524f96"><div class="sl-block-content" style="z-index: 12;"><img class="" data-natural-width="256" data-natural-height="192" data-lazy-loaded="" data-src="lessons-from-e2e-testing-web-applications-django-con-2024/6e1a48c55b3a5f78f625baadac354c81.svg"></div></div></section><section data-id="5de87c159bab7d08ec421df884187eca"><div class="sl-block" data-block-type="text" style="width: 1075px; left: 102.5px; top: 46px; height: auto;" data-block-id="c0dae0bd87b8c9eb68772a89e4e8b8d7"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 10;"><h1>My 2¢ 🪙</h1></div></div>
+<div class="sl-block" data-block-type="text" data-name="text-ae4b8b" data-block-id="d7ddd5e9544a32fd23f7b56aa118b808" style="height: auto; width: 600px; left: 340px; top: 259.5px;"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11;"><h3>Use server based responses for critical paths</h3></div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; width: 600px; left: 340px; top: 475px;" data-block-id="cb162b619e23a127e0c54316f9161c0e" data-name="text-d2c118"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 12;"><h3>Use stubbing for all other workflows</h3></div></div></section><section data-id="fc4f2648d6b56c8e249c97710d8725a2"><div class="sl-block" data-block-type="text" style="width: 1280px; left: 0px; top: 432px; height: auto;" data-block-id="d2b1691e8796d2c342a464a0ccdbdb28"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 10;"><h1> 💡 Only testing "Happy Path"</h1></div></div>
+<div class="sl-block" data-block-type="image" data-name="image-17f08a" style="width: 413.7px; height: 275.8px; left: 433.15px; top: 78.1px; min-width: 1px; min-height: 1px;" data-block-id="1cb3422ae4290d36af679925407fb5fd"><div class="sl-block-content" style="z-index: 11;"><img class="" data-natural-width="1920" data-natural-height="1280" data-lazy-loaded="" data-src="lessons-from-e2e-testing-web-applications-django-con-2024/f64745ae6d0dd80d89d248f17bfde2b7"></div></div></section><section data-id="76370473afb1aa061f3d76047a612ccd"><div class="sl-block" data-block-type="image" data-name="image-d893e9" data-block-id="772803cb97cf3495422462cbad133e54" style="width: 464.602px; height: 532.8px; left: 407.699px; top: 93.6px; min-width: 1px; min-height: 1px;"><div class="sl-block-content" style="z-index: 10;"><img class="" data-natural-width="436" data-natural-height="500" data-lazy-loaded="" data-src="lessons-from-e2e-testing-web-applications-django-con-2024/894cbd471c75917f1e132d6e75a761ef.gif"></div></div></section><section data-id="2f4fd0f87edf5451440a20cdc2fc47a8"><div class="sl-block" data-block-type="code" data-name="code-595252" style="width: 1280px; height: 242.5px; left: 0px; top: 310.75px;" data-block-id="add400f49a1266228b2b4837d8f02bc3"><div class="sl-block-content notranslate" data-highlight-theme="xcode" data-code-frame="none" style="z-index: 10;"><pre style="font-size: 35px; line-height: 42px; tab-size: 4;" class="typescript"><code data-line-numbers="">it('should log in with valid credentials', 
+   () =&gt; { /* ... */ })
+
+it('should show an error with invalid credentials', 
+   () =&gt; { /* ... */ })</code></pre></div></div>
+<div class="sl-block" data-block-type="text" style="width: 1076px; left: 80px; top: 70px; height: auto;" data-name="text-c54df3" data-block-id="9534cbde28d5dbb91a3d3c2b2d37a400"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 11;"><h2>✅ Test error cases</h2></div></div>
+</section><section data-id="bdad0f33b1f64e5372f6360b6e2040a6"><div class="sl-block" data-block-type="text" style="width: 598px; left: 364.096px; top: 0px; height: auto;" data-block-id="818a69c762983c75406a6a8ed1d4e07d"><div class="sl-block-content" data-placeholder-tag="h1" style="font-size: 175%; text-align: left; z-index: 10;" data-placeholder-text="Text"><h1 style="text-align:center">Keep<br>
+<br>
+Updated<br>
+<span style="color:#008000">v 13.14.x</span>
+</h1></div></div>
+<div class="sl-block" data-block-type="image" data-name="image-61ba27" data-block-id="1a71c15caa2c777dc391b38c1cc54746" style="width: 482.787px; height: 161.699px; left: 421.702px; top: 179.801px; min-width: 1px; min-height: 1px;"><div class="sl-block-content" style="z-index: 11;"><img class="" data-natural-width="418" data-natural-height="140" style="" data-lazy-loaded="" data-src="lessons-from-e2e-testing-web-applications-django-con-2024/e372f3235085416cd66a053b441068d3.png"></div></div></section><section data-id="a8760f7e8bb869a8a17270756a9a7d85"><div class="sl-block" data-block-type="text" style="width: 598px; left: 364.096px; top: 0px; height: auto;" data-block-id="ca9a7ae2ef28f167d4e07eded83adddf"><div class="sl-block-content" data-placeholder-tag="h1" style="font-size: 175%; text-align: left; z-index: 10;" data-placeholder-text="Text"><h1 style="text-align:center">Keep<br>
+<br>
+Updated<br>
+<span style="color:#008000">v 1.47.x</span>
+</h1></div></div>
+<div class="sl-block" data-block-type="image" data-name="image-61ba27" style="width: 758.625px; height: 153px; left: 270.324px; top: 179.801px; min-width: 1px; min-height: 1px;" data-block-id="f6f3ee921a93e61ef489ee1c2fed808e"><div class="sl-block-content" style="z-index: 11;" data-inline-svg="false"><img class="" data-natural-width="952" data-natural-height="192" style="" data-lazy-loaded="" data-src="lessons-from-e2e-testing-web-applications-django-con-2024/bf179856761454665024a4de01d59a00.svg"></div></div></section><section data-id="1d2a933073d7928c4c432aca2bb20efc"><div class="sl-block" data-block-type="iframe" data-name="iframe-0dd19b" data-block-id="fbad49b05ace4b0f76f3b2293eba249f" style="width: 1280px; height: 720px; left: 0px; top: 0px;"><div class="sl-block-content" style="z-index: 10;"><iframe allow="fullscreen; accelerometer; geolocation; gyroscope; camera; encrypted-media; microphone; midi; autoplay" data-preload="true" sandbox="allow-forms allow-scripts allow-popups allow-same-origin allow-pointer-lock allow-presentation" data-lazy-loaded="" data-src="https://docs.cypress.io/guides/references/best-practices"></iframe></div></div></section><section data-id="5367da4aa69b61ee8deb6b83e4f602ba"><div class="sl-block" data-block-type="iframe" data-name="iframe-089e5c" data-block-id="7b64d7b624c29edebdb7a12147d8040d" style="width: 1280px; height: 720px; left: 0px; top: 0px;"><div class="sl-block-content" style="z-index: 10;"><iframe allow="fullscreen; autoplay; accelerometer; geolocation; gyroscope; camera; encrypted-media; microphone; midi" data-src="https://playwright.dev/docs/best-practices" sandbox="allow-forms allow-scripts allow-popups allow-same-origin allow-pointer-lock allow-presentation"></iframe></div></div></section><section data-id="106163177d766844b4beb6c24d46ac3b"><div class="sl-block" data-block-type="image" data-name="image-721cca" data-block-id="72987fa299e470551d093b2c7ca0df6d" style="width: 479.667px; height: 720px; left: 400px; top: 0px; min-width: 1px; min-height: 1px;"><div class="sl-block-content" style="z-index: 10;"><img class="" data-natural-width="1920" data-natural-height="2882" data-lazy-loaded="" data-src="lessons-from-e2e-testing-web-applications-django-con-2024/a72ae08e46cff09905e4a1bca0007976"></div></div></section><section data-id="06680b624c4f3864cf0caf83038b1f10"><div class="sl-block" data-block-type="text" style="width: 1280px; left: 0px; top: 262.5px; height: auto;" data-name="text-774f6c" data-block-id="ec3a7ba5f48d47f07cf96b0189e31e07"><div class="sl-block-style" style="z-index: 10; transform: rotate(0deg);"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Subtitle" style="z-index: 10; color: rgb(0, 0, 0);">
+<blockquote>
+<h1>
+<span style="text-align:left">Stay Hungry</span><span style="color:rgb(24, 24, 24); text-align:left">. Stay Foolish.</span>
+</h1>
+
+<h1>— Steve Jobs</h1>
+</blockquote>
+</div></div></div></section><section data-id="7ed94e91bbfa08df67085dcd2f90a461"><div class="sl-block" data-block-type="text" style="width: 806px; left: 237px; top: 167px; height: auto;" data-block-id="315116094a471cb59efcc22777d343be"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 10;">
+<h1>@avindrafernando</h1>
+</div></div>
+
+<div class="sl-block" data-block-type="text" style="width: 1049px; left: 115.5px; top: 383px; height: auto;" data-block-id="3b2c536ee7ec3c0b800d5edc7f63f760" data-name="text-c2b309"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 11;">
+<h1>Taprobane Consulting, LLC</h1>
+</div></div></section><section data-id="5cf486503746578c54aea8cf3af0c43c"><div class="sl-block" data-block-type="iframe" data-name="iframe-1db749" data-block-id="1e154b5dcfd6c8ba0e3c3a9bd6d38a0c" style="width: 1280px; height: 720px; left: 0px; top: 0px;"><div class="sl-block-content" style="z-index: 10;"><iframe allow="fullscreen; accelerometer; geolocation; gyroscope; camera; encrypted-media; microphone; midi; autoplay" data-src="https://taprobaneconsulting.tech/" sandbox="allow-forms allow-scripts allow-popups allow-same-origin allow-pointer-lock allow-presentation"></iframe></div></div></section><section data-id="b783428dcf690d3d305bbc6e8b200cdc"><div class="sl-block" data-block-type="image" data-name="image-e044db" data-block-id="98541b05375e05bf6cfc00717434b65c" style="width: 355.323px; height: 532.799px; left: 142.339px; top: 93.6005px; min-width: 1px; min-height: 1px;"><div class="sl-block-content" style="z-index: 10;"><img style="" data-natural-width="1920" data-natural-height="2879" data-lazy-loaded="" data-src="lessons-from-e2e-testing-web-applications-django-con-2024/d0faebc4ad7dec4f8c14826a47be8dec"></div></div>
+<div class="sl-block" data-block-type="image" data-name="image-76e3b0" data-block-id="a94a18341af963d00b008e9b26441a9f" style="width: 577.2px; height: 384.8px; left: 640px; top: 167.6px; min-width: 1px; min-height: 1px;"><div class="sl-block-content" style="z-index: 11;"><img style="" data-natural-width="1920" data-natural-height="1280" data-lazy-loaded="" data-src="lessons-from-e2e-testing-web-applications-django-con-2024/d5a1d2736260979325b231e56edcc6ff"></div></div></section>
+			</div>
+		</div>
+
+		<script>
+			var SLConfig = {"deck": {"id":3274073,"slug":"lessons-from-e2e-testing-web-applications-django-con-2024","title":"E2E Testing Web Applications - DjangoCon 2024","description":"","width":1280,"height":720,"margin":0.05,"visibility":"self","published_at":null,"sanitize_messages":null,"thumbnail_url":"https://s3.amazonaws.com/media-p.slid.es/thumbnails/d6ed454639e9a29d1e5bcd98c2354c3e/thumb.jpg?1706060455","view_count":0,"user":{"id":887386,"username":"avindrafernando","name":"Avindra Fernando","description":null,"thumbnail_url":"https://lh6.googleusercontent.com/-M3NEgrSsLQE/AAAAAAAAAAI/AAAAAAAAAng/gI6HoGNo1s0/photo.jpg","account_type":"lite","team_id":null,"settings":{"id":1364586,"present_controls":true,"present_upsizing":true,"present_pointer":false,"present_notes":true,"default_deck_tag_id":null}},"background_transition":"slide","transition":"slide","theme_id":null,"theme_font":"montserrat","theme_color":"silver-blue","auto_slide_interval":0,"comments_enabled":false,"forking_enabled":false,"rolling_links":false,"center":false,"shuffle":false,"should_loop":false,"share_notes":false,"slide_number":true,"slide_count":88,"rtl":false,"version":2,"collaborative":false,"deck_user_editor_limit":1,"data_updated_at":1727146174722,"font_typekit":null,"font_google":null,"time_limit":null,"navigation_mode":"default","upsizing_enabled":true,"language":"en","notes":{}}};
+
+
+			// Use local fonts
+			SLConfig.fonts_url = 'lib/fonts/';
+		</script>
+
+		<script src="lib/reveal.js"></script>
+		<script src="lib/reveal-plugins.js"></script>
+		<script src="lib/offline.js"></script>
+
+		<!-- Initialize the presentation -->
+		<script>
+			Reveal.initialize({
+				width: 1280,
+				height: 720,
+				margin: 0.05,
+				
+
+				hash: true,
+				controls: true,
+				progress: true,
+				mouseWheel: false,
+				showNotes: false,
+				slideNumber: true,
+				fragmentInURL: true,
+
+				autoSlide: 0,
+				autoSlideStoppable: true,
+
+				autoAnimateMatcher: SL.deck.AutoAnimate.matcher,
+
+				scrollActivationWidth: null,
+
+				center: false,
+				shuffle: false,
+				loop: false,
+				rtl: false,
+				navigationMode: "default",
+
+				transition: "slide",
+				backgroundTransition: "slide",
+
+				highlight: {
+					escapeHTML: false
+				},
+
+				plugins: [ RevealZoom, RevealNotes, RevealMarkdown, RevealHighlight ]
+			});
+		</script>
+
+		
+
+
+	</body>
+</html>
